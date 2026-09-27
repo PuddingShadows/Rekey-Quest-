@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://div8v137r4oh7"]
+
+[node name="environmentManager" type="Node2D" unique_id=75486813]
+
+[node name="WorldEnvironment" type="CanvasModulate" parent="." unique_id=1430482134]

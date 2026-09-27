@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://cu2m5g1eder1k"]
+
+[ext_resource type="Script" uid="uid://cy81g6td53ax1" path="res://scripts/pause/pause_menu_principal.gd" id="1_or6vl"]
+[ext_resource type="Theme" uid="uid://bygvyxbdiy3qw" path="res://pause_menu.tres" id="2_1f3q2"]
+[ext_resource type="FontFile" uid="uid://uen7wraggy3u" path="res://assets/huds/fonts/cc.yal.7w7.block.ttf" id="3_165qr"]
+[ext_resource type="Texture2D" uid="uid://bxk40iglejbfb" path="res://assets/Menu/Buttons/Play.png" id="4_165qr"]
+[ext_resource type="Script" uid="uid://bappuwp1y20l4" path="res://scripts/play/play_principal.gd" id="5_165qr"]
+[ext_resource type="Texture2D" uid="uid://bb18wu8ft1a5" path="res://assets/Background/Gray.png" id="6_n2uxo"]
+[ext_resource type="AudioStream" uid="uid://dg3gx4twi0rj7" path="res://assets/sons/select.wav" id="7_c5574"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5d2l8"]
+font = ExtResource("3_165qr")
+font_size = 64
+font_color = Color(1, 0.66917914, 0.61735123, 1)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_165qr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n2uxo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c5574"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xk5m3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gur0q"]
+
+[sub_resource type="Theme" id="Theme_c5574"]
+Button/colors/icon_pressed_color = Color(0.35, 0.35, 0.35, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_165qr")
+Button/styles/focus = SubResource("StyleBoxEmpty_n2uxo")
+Button/styles/hover = SubResource("StyleBoxEmpty_c5574")
+Button/styles/normal = SubResource("StyleBoxEmpty_xk5m3")
+Button/styles/pressed = SubResource("StyleBoxEmpty_gur0q")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5574"]
+texture = ExtResource("6_n2uxo")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xk5m3"]
+sources/0 = SubResource("TileSetAtlasSource_c5574")
+
+[node name="pause_menu_principal" type="CanvasLayer" unique_id=210912136]
+process_mode = 2
+script = ExtResource("1_or6vl")
+
+[node name="bg_overlay" type="ColorRect" parent="." unique_id=148886528]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="menu_holder" type="VBoxContainer" parent="." unique_id=1526026156]
+process_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -30.0
+offset_right = 74.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="resume_btn" type="Button" parent="menu_holder" unique_id=1187277393]
+layout_mode = 2
+theme = ExtResource("2_1f3q2")
+text = "VOLTAR"
+
+[node name="options_btn" type="Button" parent="menu_holder" unique_id=1933352775]
+layout_mode = 2
+theme = ExtResource("2_1f3q2")
+text = " OPÇÕES "
+
+[node name="quit_btn" type="Button" parent="menu_holder" unique_id=779892704]
+layout_mode = 2
+theme = ExtResource("2_1f3q2")
+text = "SAIR"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1867677301]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_right = 80.0
+offset_bottom = 28.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_constants/margin_top = 25
+
+[node name="paused_label" type="Label" parent="MarginContainer" unique_id=173142860]
+layout_direction = 1
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/line_spacing = 3
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("3_165qr")
+text = "pause"
+label_settings = SubResource("LabelSettings_5d2l8")
+vertical_alignment = 1
+
+[node name="play_principal" type="Button" parent="." unique_id=529521189]
+z_index = 4
+offset_left = 613.0
+offset_top = 4.0
+offset_right = 634.0
+offset_bottom = 26.0
+theme = SubResource("Theme_c5574")
+icon = ExtResource("4_165qr")
+flat = true
+script = ExtResource("5_165qr")
+
+[node name="background" type="TileMapLayer" parent="." unique_id=87718406]
+tile_map_data = PackedByteArray(0, 0, 38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 38, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 39, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 39, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0)
+tile_set = SubResource("TileSet_xk5m3")
+
+[node name="SFX_select" type="AudioStreamPlayer2D" parent="." unique_id=2100697723]
+process_mode = 3
+stream = ExtResource("7_c5574")
+bus = &"sfx"
+
+[connection signal="pressed" from="menu_holder/resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/options_btn" to="." method="_on_options_btn_pressed"]
+[connection signal="pressed" from="menu_holder/quit_btn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="play_principal" to="play_principal" method="_on_pressed"]

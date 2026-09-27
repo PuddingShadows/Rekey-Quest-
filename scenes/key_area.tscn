@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://b7leg4e527pma"]
+
+[ext_resource type="Texture2D" uid="uid://crkbs5lxnxalf" path="res://portas e chaves/normal levels/key.png" id="1_ii13p"]
+[ext_resource type="Script" uid="uid://dmm63a3wigt5o" path="res://scripts/chave/key.gd" id="1_n45bm"]
+[ext_resource type="Texture2D" uid="uid://d2srwl8nij6ix" path="res://assets/Items/Fruits/Collected.png" id="2_0fdsj"]
+[ext_resource type="AudioStream" uid="uid://d2t0rl2pk58dk" path="res://assets/sons/key.wav" id="4_n45bm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fpur"]
+atlas = ExtResource("2_0fdsj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fklg3"]
+atlas = ExtResource("2_0fdsj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66ahm"]
+atlas = ExtResource("2_0fdsj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7xax"]
+atlas = ExtResource("2_0fdsj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6u5c"]
+atlas = ExtResource("2_0fdsj")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cluhk"]
+atlas = ExtResource("2_0fdsj")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fdsj"]
+atlas = ExtResource("1_ii13p")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4fpur"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fpur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fklg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66ahm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7xax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6u5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cluhk")
+}],
+"loop": 0,
+"name": &"collect",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fdsj")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4fnmo"]
+radius = 8.0
+height = 28.0
+
+[node name="key_area" type="Area2D" unique_id=721714516]
+z_index = 2
+collision_layer = 64
+script = ExtResource("1_n45bm")
+
+[node name="key" type="AnimatedSprite2D" parent="." unique_id=1911034762]
+position = Vector2(0, 2)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_4fpur")
+animation = &"collect"
+autoplay = "idle"
+
+[node name="collision" type="CollisionShape2D" parent="." unique_id=1607738557]
+visible = false
+shape = SubResource("CapsuleShape2D_4fnmo")
+
+[node name="SFX_collect" type="AudioStreamPlayer2D" parent="." unique_id=880831364]
+stream = ExtResource("4_n45bm")
+bus = &"sfx"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="key" to="." method="_on_key_animation_finished"]

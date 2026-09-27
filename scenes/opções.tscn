@@ -1,0 +1,952 @@
+[gd_scene format=4 uid="uid://7ll36ko8b42y"]
+
+[ext_resource type="Texture2D" uid="uid://bb18wu8ft1a5" path="res://assets/Background/Gray.png" id="1_6hnwd"]
+[ext_resource type="Script" uid="uid://dl6imeyctsj0w" path="res://scripts/opções.gd" id="1_iwby3"]
+[ext_resource type="Texture2D" uid="uid://baxivgf7iqabm" path="res://assets/Background/Black.png" id="2_iwby3"]
+[ext_resource type="Script" uid="uid://cdcdp3tjpgo4f" path="res://scripts/barra_scroll/opções.gd" id="2_qimm6"]
+[ext_resource type="Shader" uid="uid://bruftwfc1rrad" path="res://menu.gdshader" id="3_45ydu"]
+[ext_resource type="FontFile" uid="uid://uen7wraggy3u" path="res://assets/huds/fonts/cc.yal.7w7.block.ttf" id="4_77py5"]
+[ext_resource type="Script" uid="uid://ek1325l10jey" path="res://scripts/barra_scroll/controles.gd" id="5_72we5"]
+[ext_resource type="AudioStream" uid="uid://dg3gx4twi0rj7" path="res://assets/sons/select.wav" id="6_45ydu"]
+[ext_resource type="AudioStream" uid="uid://kc5s3mjat4w3" path="res://assets/sons/reset.wav" id="7_77py5"]
+[ext_resource type="Script" uid="uid://dg6dap73fj6h4" path="res://scripts/vídeo/tela_cheia.gd" id="9_5onl3"]
+[ext_resource type="Script" uid="uid://b66l0qk8bjm8y" path="res://scripts/barra_scroll/video.gd" id="9_m0cd1"]
+[ext_resource type="Texture2D" uid="uid://dwux4r06o67ym" path="res://assets/CheckButton icons/on.png" id="9_nfvr3"]
+[ext_resource type="Texture2D" uid="uid://clov113csdra3" path="res://assets/CheckButton icons/off.png" id="10_xuu1d"]
+[ext_resource type="Script" uid="uid://cw5k0pjrcdjve" path="res://scripts/vídeo/salvar_video.gd" id="12_2h33a"]
+[ext_resource type="Script" uid="uid://besuid5sisn7c" path="res://scripts/vídeo/v_sync.gd" id="12_xuu1d"]
+[ext_resource type="Script" uid="uid://0k5cc6uq8pv" path="res://scripts/vídeo/canvas_layer.gd" id="14_6crur"]
+[ext_resource type="Script" uid="uid://cv676cppdb1k0" path="res://scripts/vídeo/viewport.gd" id="15_2h33a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_77py5"]
+font = ExtResource("4_77py5")
+font_size = 75
+font_color = Color(0.88, 0.5901867, 0.5456, 1)
+outline_size = 18
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jkg1q"]
+shader = ExtResource("3_45ydu")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72we5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jf7ej"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ifq6k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m8bho"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbsas"]
+
+[sub_resource type="Theme" id="Theme_45ydu"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_hover_color = Color(0.46, 0.46, 0.46, 1)
+Button/colors/font_hover_pressed_color = Color(0.3, 0.3, 0.3, 1)
+Button/colors/font_pressed_color = Color(0.3, 0.3, 0.3, 1)
+Button/constants/outline_size = 18
+Button/font_sizes/font_size = 75
+Button/fonts/font = ExtResource("4_77py5")
+Button/styles/disabled = SubResource("StyleBoxEmpty_72we5")
+Button/styles/focus = SubResource("StyleBoxEmpty_jf7ej")
+Button/styles/hover = SubResource("StyleBoxEmpty_ifq6k")
+Button/styles/normal = SubResource("StyleBoxEmpty_m8bho")
+Button/styles/pressed = SubResource("StyleBoxEmpty_kbsas")
+
+[sub_resource type="LabelSettings" id="LabelSettings_2baek"]
+font = ExtResource("4_77py5")
+font_size = 60
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b55fv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jopo2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bbqcj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c8q8n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v14ig"]
+
+[sub_resource type="Theme" id="Theme_r0p3f"]
+Button/colors/font_color = Color(0.78, 0.78, 0.78, 1)
+Button/colors/font_focus_color = Color(0.85, 0.85, 0.85, 1)
+Button/colors/font_hover_color = Color(0.36, 0.36, 0.36, 1)
+Button/colors/font_hover_pressed_color = Color(0.2, 0.2, 0.2, 1)
+Button/colors/font_pressed_color = Color(0.2, 0.2, 0.2, 1)
+Button/constants/outline_size = 18
+Button/font_sizes/font_size = 55
+Button/fonts/font = ExtResource("4_77py5")
+Button/styles/disabled = SubResource("StyleBoxEmpty_b55fv")
+Button/styles/focus = SubResource("StyleBoxEmpty_jopo2")
+Button/styles/hover = SubResource("StyleBoxEmpty_bbqcj")
+Button/styles/normal = SubResource("StyleBoxEmpty_c8q8n")
+Button/styles/pressed = SubResource("StyleBoxEmpty_v14ig")
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0p3f"]
+font = ExtResource("4_77py5")
+font_size = 60
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ai1dc"]
+font = ExtResource("4_77py5")
+font_size = 40
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b55fv"]
+font = ExtResource("4_77py5")
+font_size = 35
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_08y6r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5x886"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2baek"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r0p3f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ai1dc"]
+
+[sub_resource type="Theme" id="Theme_2h33a"]
+Button/colors/font_hover_color = Color(0.45882353, 0.45882353, 0.45882353, 1)
+Button/colors/font_hover_pressed_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+Button/colors/font_pressed_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+Button/constants/outline_size = 18
+Button/font_sizes/font_size = 75
+Button/fonts/font = ExtResource("4_77py5")
+Button/styles/disabled = SubResource("StyleBoxEmpty_08y6r")
+Button/styles/focus = SubResource("StyleBoxEmpty_5x886")
+Button/styles/hover = SubResource("StyleBoxEmpty_2baek")
+Button/styles/normal = SubResource("StyleBoxEmpty_r0p3f")
+Button/styles/pressed = SubResource("StyleBoxEmpty_ai1dc")
+
+[sub_resource type="LabelSettings" id="LabelSettings_72we5"]
+font = ExtResource("4_77py5")
+font_size = 45
+font_color = Color(0.8784314, 0.8784314, 0.8784314, 1)
+outline_size = 18
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_08y6r"]
+font = ExtResource("4_77py5")
+font_size = 45
+font_color = Color(0.36, 0.36, 0.36, 1)
+outline_size = 18
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5x886"]
+font = ExtResource("4_77py5")
+font_size = 45
+font_color = Color(0.36078432, 0.36078432, 0.36078432, 1)
+outline_size = 18
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qbus4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wuabd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1pgkn"]
+
+[sub_resource type="Theme" id="Theme_qimm6"]
+CheckBox/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+CheckBox/constants/outline_size = 18
+CheckBox/font_sizes/font_size = 75
+CheckBox/fonts/font = ExtResource("4_77py5")
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_qbus4")
+CheckBox/styles/pressed = SubResource("StyleBoxEmpty_wuabd")
+CheckButton/font_sizes/font_size = 50
+CheckButton/fonts/font = ExtResource("4_77py5")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_1pgkn")
+
+[sub_resource type="LabelSettings" id="LabelSettings_2h33a"]
+font = ExtResource("4_77py5")
+font_size = 50
+font_color = Color(0.88, 0.88, 0.88, 1)
+outline_size = 18
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xuu1d"]
+font = ExtResource("4_77py5")
+font_size = 60
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_m0cd1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6crur"]
+font = ExtResource("4_77py5")
+font_size = 60
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cy66b"]
+font = ExtResource("4_77py5")
+font_size = 45
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwby3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_45ydu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_77py5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qimm6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5onl3"]
+
+[sub_resource type="Theme" id="Theme_0av7f"]
+Button/colors/font_color = Color(0.88, 0, 0, 1)
+Button/colors/font_focus_color = Color(0.95, 0, 0, 1)
+Button/colors/font_hover_color = Color(0.75, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0.5, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.5, 0, 0, 1)
+Button/constants/outline_size = 18
+Button/font_sizes/font_size = 75
+Button/fonts/font = ExtResource("4_77py5")
+Button/styles/disabled = SubResource("StyleBoxEmpty_iwby3")
+Button/styles/focus = SubResource("StyleBoxEmpty_45ydu")
+Button/styles/hover = SubResource("StyleBoxEmpty_77py5")
+Button/styles/normal = SubResource("StyleBoxEmpty_qimm6")
+Button/styles/pressed = SubResource("StyleBoxEmpty_5onl3")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0av7f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfvr3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xuu1d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0cd1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ycw2r"]
+
+[sub_resource type="Theme" id="Theme_6crur"]
+Button/colors/font_color = Color(0, 1, 0, 1)
+Button/colors/font_focus_color = Color(0, 1, 0, 1)
+Button/colors/font_hover_color = Color(0, 0.75, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0.5, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0.5, 0, 1)
+Button/constants/outline_size = 18
+Button/font_sizes/font_size = 75
+Button/fonts/font = ExtResource("4_77py5")
+Button/styles/disabled = SubResource("StyleBoxEmpty_0av7f")
+Button/styles/focus = SubResource("StyleBoxEmpty_nfvr3")
+Button/styles/hover = SubResource("StyleBoxEmpty_xuu1d")
+Button/styles/normal = SubResource("StyleBoxEmpty_m0cd1")
+Button/styles/pressed = SubResource("StyleBoxEmpty_ycw2r")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6b64"]
+texture = ExtResource("1_6hnwd")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1halq"]
+texture = ExtResource("2_iwby3")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mnq6b"]
+sources/0 = SubResource("TileSetAtlasSource_j6b64")
+sources/1 = SubResource("TileSetAtlasSource_1halq")
+
+[node name="opções" type="Control" unique_id=763463600]
+process_mode = 3
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iwby3")
+metadata/_edit_vertical_guides_ = [-64.0]
+
+[node name="opções_label" type="Label" parent="." unique_id=58413746]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 10.0
+offset_right = 112.5
+offset_bottom = 43.0
+grow_horizontal = 2
+text = "Opções"
+label_settings = SubResource("LabelSettings_77py5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="vinherta" type="ColorRect" parent="." unique_id=1732317394]
+modulate = Color(0.6901961, 0.6901961, 0.6901961, 1)
+material = SubResource("ShaderMaterial_jkg1q")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.13725491)
+
+[node name="opções" type="ScrollContainer" parent="." unique_id=1558450406]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_qimm6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="opções" unique_id=1454826533]
+custom_minimum_size = Vector2(0, 325)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="controles" type="Button" parent="opções/VBoxContainer" unique_id=573379997]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_45ydu")
+theme_override_font_sizes/font_size = 60
+text = "Controles"
+
+[node name="audio" type="Button" parent="opções/VBoxContainer" unique_id=842790109]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_45ydu")
+theme_override_font_sizes/font_size = 60
+text = "Áudio"
+
+[node name="video" type="Button" parent="opções/VBoxContainer" unique_id=1965871176]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_45ydu")
+theme_override_font_sizes/font_size = 60
+text = "Vídeo"
+
+[node name="jogo" type="Button" parent="opções/VBoxContainer" unique_id=2085775400]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_45ydu")
+theme_override_font_sizes/font_size = 60
+text = "Jogo
+"
+
+[node name="voltar" type="Button" parent="opções/VBoxContainer" unique_id=1566957678]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_45ydu")
+text = "Voltar"
+
+[node name="controles" type="ScrollContainer" parent="." unique_id=687320149]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_72we5")
+
+[node name="ContentHolder" type="Control" parent="controles" unique_id=1815305479]
+custom_minimum_size = Vector2(640, 410)
+layout_mode = 2
+
+[node name="controle_mobile" type="VBoxContainer" parent="controles/ContentHolder" unique_id=619574676]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_top = 80.0
+offset_right = 225.0
+offset_bottom = 107.0
+grow_horizontal = 2
+theme_override_constants/separation = 24
+
+[node name="titulo" type="Label" parent="controles/ContentHolder/controle_mobile" unique_id=925801396]
+layout_mode = 2
+text = "Controle Mobile:"
+label_settings = SubResource("LabelSettings_2baek")
+
+[node name="editar_mobile" type="Button" parent="controles/ContentHolder/controle_mobile" unique_id=1927938868]
+layout_mode = 2
+theme = SubResource("Theme_r0p3f")
+text = "editar"
+
+[node name="controle_pc" type="VBoxContainer" parent="controles/ContentHolder" unique_id=890573180]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -10.0
+offset_right = 250.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="titulo" type="Label" parent="controles/ContentHolder/controle_pc" unique_id=901796926]
+layout_mode = 2
+text = "Controles PC:"
+label_settings = SubResource("LabelSettings_r0p3f")
+horizontal_alignment = 1
+
+[node name="producao" type="Label" parent="controles/ContentHolder/controle_pc" unique_id=2094673622]
+layout_mode = 2
+text = "em produção, 
+obrigado pela compreensão"
+label_settings = SubResource("LabelSettings_ai1dc")
+horizontal_alignment = 1
+
+[node name="erro" type="Label" parent="controles/ContentHolder" unique_id=171615222]
+visible = false
+layout_mode = 0
+offset_left = 20.0
+offset_top = 131.0
+offset_right = 617.0
+offset_bottom = 166.0
+text = "não é possível editar os controles
+ mobile durante a gameplay "
+label_settings = SubResource("LabelSettings_b55fv")
+horizontal_alignment = 1
+
+[node name="voltar_controles" type="Button" parent="controles/ContentHolder" unique_id=1677525631]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = 140.0
+offset_right = 112.5
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2h33a")
+text = "voltar"
+
+[node name="audio" type="ScrollContainer" parent="." unique_id=1809820978]
+visible = false
+layout_mode = 0
+offset_left = 23.0
+offset_top = 60.0
+offset_right = 640.0
+offset_bottom = 320.0
+
+[node name="ContentHolder" type="Control" parent="audio" unique_id=1301236724]
+layout_mode = 2
+
+[node name="vol_geral" type="VBoxContainer" parent="audio/ContentHolder" unique_id=1960384753]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 25.0
+offset_right = 508.0
+offset_bottom = 41.0
+
+[node name="volume_geral" type="HSlider" parent="audio/ContentHolder/vol_geral" unique_id=17703027]
+unique_name_in_owner = true
+layout_mode = 2
+value = 50.0
+
+[node name="music" type="VBoxContainer" parent="audio/ContentHolder" unique_id=1905211095]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 75.0
+offset_right = 508.0
+offset_bottom = 91.0
+
+[node name="musica" type="HSlider" parent="audio/ContentHolder/music" unique_id=1525226811]
+layout_mode = 2
+value = 50.0
+
+[node name="SFXs" type="VBoxContainer" parent="audio/ContentHolder" unique_id=1125176378]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 135.0
+offset_right = 508.0
+offset_bottom = 151.0
+
+[node name="efeitos sonoros" type="HSlider" parent="audio/ContentHolder/SFXs" unique_id=1243623579]
+unique_name_in_owner = true
+layout_mode = 2
+value = 50.0
+
+[node name="volume_geral" type="Label" parent="audio/ContentHolder" unique_id=1872060829]
+layout_mode = 0
+offset_top = 21.0
+offset_right = 300.0
+offset_bottom = 44.0
+text = "Volume geral"
+label_settings = SubResource("LabelSettings_72we5")
+
+[node name="vol_geral_porcentagem" type="Label" parent="audio/ContentHolder" unique_id=364374848]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 522.0
+offset_top = 21.0
+offset_right = 597.0
+offset_bottom = 44.0
+text = "50%"
+label_settings = SubResource("LabelSettings_72we5")
+
+[node name="musica" type="Label" parent="audio/ContentHolder" unique_id=1645955518]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 70.0
+offset_right = 260.0
+offset_bottom = 93.0
+text = "música"
+label_settings = SubResource("LabelSettings_08y6r")
+
+[node name="musica_porcentagem" type="Label" parent="audio/ContentHolder" unique_id=251973129]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 522.0
+offset_top = 70.0
+offset_right = 597.0
+offset_bottom = 93.0
+text = "N%"
+label_settings = SubResource("LabelSettings_5x886")
+
+[node name="efeitos sonoros" type="Label" parent="audio/ContentHolder" unique_id=1007230998]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 120.0
+offset_right = 261.0
+offset_bottom = 163.0
+text = "efeitos
+sonoros"
+label_settings = SubResource("LabelSettings_72we5")
+horizontal_alignment = 1
+
+[node name="SFXs_porcentagem" type="Label" parent="audio/ContentHolder" unique_id=1132120421]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 522.0
+offset_top = 130.0
+offset_right = 597.0
+offset_bottom = 153.0
+text = "50%"
+label_settings = SubResource("LabelSettings_72we5")
+
+[node name="voltar_audio" type="Button" parent="audio/ContentHolder" unique_id=2082384801]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 200.0
+offset_right = 575.0
+offset_bottom = 233.0
+theme = SubResource("Theme_2h33a")
+text = "voltar"
+
+[node name="salvar_audio" type="Button" parent="audio/ContentHolder" unique_id=1770973258]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 200.0
+offset_right = 249.0
+offset_bottom = 233.0
+theme = SubResource("Theme_2h33a")
+theme_override_colors/font_color = Color(0, 0.8784314, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.95, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.3, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.46, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.3, 0, 1)
+text = "salvar"
+script = ExtResource("12_2h33a")
+
+[node name="video" type="ScrollContainer" parent="." unique_id=302370915]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_m0cd1")
+
+[node name="ContentHolder" type="Control" parent="video" unique_id=93674301]
+custom_minimum_size = Vector2(600, 580)
+layout_mode = 2
+
+[node name="video" type="VBoxContainer" parent="video/ContentHolder" unique_id=1000918520]
+layout_mode = 0
+offset_right = 330.0
+offset_bottom = 148.0
+alignment = 1
+
+[node name="tela_cheia" type="CheckButton" parent="video/ContentHolder/video" unique_id=1993198757]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_qimm6")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_icons/checked = ExtResource("9_nfvr3")
+theme_override_icons/unchecked = ExtResource("10_xuu1d")
+text = "tela cheia"
+script = ExtResource("9_5onl3")
+
+[node name="VSync" type="CheckButton" parent="video/ContentHolder/video" unique_id=1816979272]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_qimm6")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_icons/checked = ExtResource("9_nfvr3")
+theme_override_icons/unchecked = ExtResource("10_xuu1d")
+text = "VSync"
+script = ExtResource("12_xuu1d")
+
+[node name="video2" type="VBoxContainer" parent="video/ContentHolder" unique_id=1603401768]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 158.0
+offset_right = 495.0
+offset_bottom = 189.0
+alignment = 1
+
+[node name="iluminação_slider" type="HSlider" parent="video/ContentHolder/video2" unique_id=1761430955]
+unique_name_in_owner = true
+layout_mode = 2
+value = 50.0
+
+[node name="iluminação" type="Label" parent="video/ContentHolder" unique_id=1276463317]
+layout_mode = 0
+offset_top = 160.0
+offset_right = 250.0
+offset_bottom = 182.0
+text = "iluminação"
+label_settings = SubResource("LabelSettings_2h33a")
+
+[node name="iluminação_porcentagem" type="Label" parent="video/ContentHolder" unique_id=1353877598]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 510.0
+offset_top = 160.0
+offset_right = 760.0
+offset_bottom = 182.0
+text = "50%"
+label_settings = SubResource("LabelSettings_2h33a")
+
+[node name="Modo" type="Label" parent="video/ContentHolder" unique_id=1525647809]
+layout_mode = 0
+offset_top = 220.0
+offset_right = 586.0
+offset_bottom = 249.0
+text = "Modo de tela:"
+label_settings = SubResource("LabelSettings_xuu1d")
+horizontal_alignment = 1
+
+[node name="tela" type="HBoxContainer" parent="video/ContentHolder" unique_id=1932855870]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -320.0
+offset_right = 232.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="canvas_layer" type="CheckButton" parent="video/ContentHolder/tela" unique_id=317014770]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_qimm6")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_icons/checked = ExtResource("9_nfvr3")
+theme_override_icons/unchecked = ExtResource("10_xuu1d")
+button_group = SubResource("ButtonGroup_m0cd1")
+text = "normal"
+script = ExtResource("14_6crur")
+
+[node name="viewport" type="CheckButton" parent="video/ContentHolder/tela" unique_id=2028983540]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_qimm6")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_icons/checked = ExtResource("9_nfvr3")
+theme_override_icons/unchecked = ExtResource("10_xuu1d")
+button_group = SubResource("ButtonGroup_m0cd1")
+text = "pixel"
+script = ExtResource("15_2h33a")
+
+[node name="idioma" type="VBoxContainer" parent="video/ContentHolder" unique_id=1132367911]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = 75.0
+offset_right = 270.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="idioma" type="Label" parent="video/ContentHolder/idioma" unique_id=882020996]
+layout_mode = 2
+text = "idioma:"
+label_settings = SubResource("LabelSettings_6crur")
+horizontal_alignment = 1
+
+[node name="PT-BR" type="Label" parent="video/ContentHolder/idioma" unique_id=1981233457]
+layout_mode = 2
+text = "Português (Brasil)"
+label_settings = SubResource("LabelSettings_6crur")
+horizontal_alignment = 1
+
+[node name="voltar_video" type="Button" parent="video/ContentHolder" unique_id=1079052605]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -70.0
+offset_right = 275.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_45ydu")
+text = "Voltar"
+
+[node name="salvar_video" type="Button" parent="video/ContentHolder" unique_id=649605417]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -276.0
+offset_top = -70.0
+offset_right = -51.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_45ydu")
+theme_override_colors/font_color = Color(0, 0.88, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.95, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.3, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.46, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.3, 0, 1)
+text = "salvar"
+script = ExtResource("12_2h33a")
+
+[node name="jogo_group" type="CanvasLayer" parent="." unique_id=516817984]
+process_mode = 3
+layer = 10
+visible = false
+
+[node name="reset_texto" type="Label" parent="jogo_group" unique_id=750265946]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -423.0
+offset_top = -80.0
+offset_right = 417.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "voce tem certeza?
+isso ira resetar TODO o save"
+label_settings = SubResource("LabelSettings_cy66b")
+horizontal_alignment = 1
+
+[node name="reset_texto2" type="Label" parent="jogo_group" unique_id=1182349096]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -423.0
+offset_top = -40.0
+offset_right = 417.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "não é possível resetar
+durante a gameplay"
+label_settings = SubResource("LabelSettings_cy66b")
+horizontal_alignment = 1
+
+[node name="reset" type="Button" parent="jogo_group" unique_id=476141219]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.5
+offset_top = -17.0
+offset_right = 131.5
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_0av7f")
+text = "resetar"
+
+[node name="sim" type="Button" parent="jogo_group" unique_id=1498899467]
+visible = false
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -319.0
+offset_top = 39.0
+offset_right = -56.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_0av7f")
+text = "sim"
+
+[node name="não" type="Button" parent="jogo_group" unique_id=460252373]
+visible = false
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 57.0
+offset_top = 39.0
+offset_right = 320.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_6crur")
+text = "não"
+
+[node name="voltar_jogo" type="Button" parent="jogo_group" unique_id=1474969982]
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -112.5
+offset_top = -53.0
+offset_right = 112.5
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_45ydu")
+text = "Voltar"
+
+[node name="background" type="TileMapLayer" parent="." unique_id=677094553]
+modulate = Color(0.31, 0.4019999, 1, 1)
+z_index = -1
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAQAAAAEAAAAAAAIAAQAAAAIAAAAAAAMAAQAAAAMAAAABAAAAAQABAAAAAAABAAEAAQABAAEAAAABAAIAAQABAAIAAAABAAMAAQABAAMAAAACAAAAAQAAAAAAAAACAAEAAQAAAAEAAAACAAIAAQACAAIAAAACAAMAAQACAAMAAAADAAAAAQABAAAAAAADAAEAAQABAAEAAAADAAIAAQADAAIAAAADAAMAAQADAAMAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAEAAAAAAAYAAQAAAAIAAAAAAAcAAQAAAAMAAAABAAQAAQABAAAAAAABAAUAAQABAAEAAAABAAYAAQABAAIAAAABAAcAAQABAAMAAAACAAQAAQACAAAAAAACAAUAAQACAAEAAAACAAYAAQACAAIAAAACAAcAAQACAAMAAAADAAQAAQADAAAAAAADAAUAAQADAAEAAAADAAYAAQADAAIAAAADAAcAAQADAAMAAAAAAAgAAQAAAAAAAAAAAAkAAQAAAAEAAAAAAAoAAQAAAAIAAAAAAAsAAQAAAAMAAAABAAgAAQABAAAAAAABAAkAAQABAAEAAAABAAoAAQABAAIAAAABAAsAAQABAAMAAAACAAgAAQACAAAAAAACAAkAAQACAAEAAAACAAoAAQACAAIAAAACAAsAAQACAAMAAAADAAgAAQADAAAAAAADAAkAAQADAAEAAAADAAoAAQADAAIAAAADAAsAAQADAAMAAAAAAAwAAQAAAAAAAAAAAA0AAQAAAAEAAAAAAA4AAQAAAAIAAAAAAA8AAQAAAAMAAAABAAwAAQABAAAAAAABAA0AAQABAAEAAAABAA4AAQABAAIAAAABAA8AAQABAAMAAAACAAwAAQACAAAAAAACAA0AAQACAAEAAAACAA4AAQACAAIAAAACAA8AAQACAAMAAAADAAwAAQADAAAAAAADAA0AAQADAAEAAAADAA4AAQADAAIAAAADAA8AAQADAAMAAAAAABAAAQAAAAAAAAAAABEAAQAAAAEAAAAAABIAAQAAAAIAAAAAABMAAQAAAAMAAAABABAAAQABAAAAAAABABEAAQABAAEAAAABABIAAQABAAIAAAABABMAAQABAAMAAAACABAAAQACAAAAAAACABEAAQACAAEAAAACABIAAQACAAIAAAACABMAAQACAAMAAAADABAAAQADAAAAAAADABEAAQADAAEAAAADABIAAQADAAIAAAADABMAAQADAAMAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAEAAAAEAAIAAQAAAAIAAAAEAAMAAQAAAAMAAAAFAAAAAQABAAAAAAAFAAEAAQABAAEAAAAFAAIAAQABAAIAAAAFAAMAAQABAAMAAAAGAAAAAQAAAAAAAAAGAAEAAQAAAAEAAAAGAAIAAQACAAIAAAAGAAMAAQACAAMAAAAHAAAAAQABAAAAAAAHAAEAAQABAAEAAAAHAAIAAQADAAIAAAAHAAMAAQADAAMAAAAEAAQAAQAAAAAAAAAEAAUAAQAAAAEAAAAEAAYAAQAAAAIAAAAEAAcAAQAAAAMAAAAFAAQAAQABAAAAAAAFAAUAAQABAAEAAAAFAAYAAQABAAIAAAAFAAcAAQABAAMAAAAGAAQAAQACAAAAAAAGAAUAAQACAAEAAAAGAAYAAQACAAIAAAAGAAcAAQACAAMAAAAHAAQAAQADAAAAAAAHAAUAAQADAAEAAAAHAAYAAQADAAIAAAAHAAcAAQADAAMAAAAEAAgAAQAAAAAAAAAEAAkAAQAAAAEAAAAEAAoAAQAAAAIAAAAEAAsAAQAAAAMAAAAFAAgAAQABAAAAAAAFAAkAAQABAAEAAAAFAAoAAQABAAIAAAAFAAsAAQABAAMAAAAGAAgAAQACAAAAAAAGAAkAAQACAAEAAAAGAAoAAQACAAIAAAAGAAsAAQACAAMAAAAHAAgAAQADAAAAAAAHAAkAAQADAAEAAAAHAAoAAQADAAIAAAAHAAsAAQADAAMAAAAEAAwAAQAAAAAAAAAEAA0AAQAAAAEAAAAEAA4AAQAAAAIAAAAEAA8AAQAAAAMAAAAFAAwAAQABAAAAAAAFAA0AAQABAAEAAAAFAA4AAQABAAIAAAAFAA8AAQABAAMAAAAGAAwAAQACAAAAAAAGAA0AAQACAAEAAAAGAA4AAQACAAIAAAAGAA8AAQACAAMAAAAHAAwAAQADAAAAAAAHAA0AAQADAAEAAAAHAA4AAQADAAIAAAAHAA8AAQADAAMAAAAEABAAAQAAAAAAAAAEABEAAQAAAAEAAAAEABIAAQAAAAIAAAAEABMAAQAAAAMAAAAFABAAAQABAAAAAAAFABEAAQABAAEAAAAFABIAAQABAAIAAAAFABMAAQABAAMAAAAGABAAAQACAAAAAAAGABEAAQACAAEAAAAGABIAAQACAAIAAAAGABMAAQACAAMAAAAHABAAAQADAAAAAAAHABEAAQADAAEAAAAHABIAAQADAAIAAAAHABMAAQADAAMAAAAIAAAAAQAAAAAAAAAIAAEAAQAAAAEAAAAIAAIAAQAAAAIAAAAIAAMAAQAAAAMAAAAJAAAAAQABAAAAAAAJAAEAAQABAAEAAAAJAAIAAQABAAIAAAAJAAMAAQABAAMAAAAKAAAAAQAAAAAAAAAKAAEAAQAAAAEAAAAKAAIAAQACAAIAAAAKAAMAAQACAAMAAAALAAAAAQABAAAAAAALAAEAAQABAAEAAAALAAIAAQADAAIAAAALAAMAAQADAAMAAAAIAAQAAQAAAAAAAAAIAAUAAQAAAAEAAAAIAAYAAQAAAAIAAAAIAAcAAQAAAAMAAAAJAAQAAQABAAAAAAAJAAUAAQABAAEAAAAJAAYAAQABAAIAAAAJAAcAAQABAAMAAAAKAAQAAQACAAAAAAAKAAUAAQACAAEAAAAKAAYAAQACAAIAAAAKAAcAAQACAAMAAAALAAQAAQADAAAAAAALAAUAAQADAAEAAAALAAYAAQADAAIAAAALAAcAAQADAAMAAAAIAAgAAQAAAAAAAAAIAAkAAQAAAAEAAAAIAAoAAQAAAAIAAAAIAAsAAQAAAAMAAAAJAAgAAQABAAAAAAAJAAkAAQABAAEAAAAJAAoAAQABAAIAAAAJAAsAAQABAAMAAAAKAAgAAQACAAAAAAAKAAkAAQACAAEAAAAKAAoAAQACAAIAAAAKAAsAAQACAAMAAAALAAgAAQADAAAAAAALAAkAAQADAAEAAAALAAoAAQADAAIAAAALAAsAAQADAAMAAAAIAAwAAQAAAAAAAAAIAA0AAQAAAAEAAAAIAA4AAQAAAAIAAAAIAA8AAQAAAAMAAAAJAAwAAQABAAAAAAAJAA0AAQABAAEAAAAJAA4AAQABAAIAAAAJAA8AAQABAAMAAAAKAAwAAQACAAAAAAAKAA0AAQACAAEAAAAKAA4AAQACAAIAAAAKAA8AAQACAAMAAAALAAwAAQADAAAAAAALAA0AAQADAAEAAAALAA4AAQADAAIAAAALAA8AAQADAAMAAAAIABAAAQAAAAAAAAAIABEAAQAAAAEAAAAIABIAAQAAAAIAAAAIABMAAQAAAAMAAAAJABAAAQABAAAAAAAJABEAAQABAAEAAAAJABIAAQABAAIAAAAJABMAAQABAAMAAAAKABAAAQACAAAAAAAKABEAAQACAAEAAAAKABIAAQACAAIAAAAKABMAAQACAAMAAAALABAAAQADAAAAAAALABEAAQADAAEAAAALABIAAQADAAIAAAALABMAAQADAAMAAAAMAAAAAQAAAAAAAAAMAAEAAQAAAAEAAAAMAAIAAQAAAAIAAAAMAAMAAQAAAAMAAAANAAAAAQABAAAAAAANAAEAAQABAAEAAAANAAIAAQABAAIAAAANAAMAAQABAAMAAAAOAAAAAQAAAAAAAAAOAAEAAQAAAAEAAAAOAAIAAQACAAIAAAAOAAMAAQACAAMAAAAPAAAAAQABAAAAAAAPAAEAAQABAAEAAAAPAAIAAQADAAIAAAAPAAMAAQADAAMAAAAMAAQAAQAAAAAAAAAMAAUAAQAAAAEAAAAMAAYAAQAAAAIAAAAMAAcAAQAAAAMAAAANAAQAAQABAAAAAAANAAUAAQABAAEAAAANAAYAAQABAAIAAAANAAcAAQABAAMAAAAOAAQAAQACAAAAAAAOAAUAAQACAAEAAAAOAAYAAQACAAIAAAAOAAcAAQACAAMAAAAPAAQAAQADAAAAAAAPAAUAAQADAAEAAAAPAAYAAQADAAIAAAAMAAgAAQAAAAAAAAAMAAkAAQAAAAEAAAAMAAoAAQAAAAIAAAANAAgAAQABAAAAAAANAAkAAQABAAEAAAANAAsAAQABAAMAAAAOAAoAAQACAAIAAAAOAAsAAQACAAMAAAAPAAkAAQADAAEAAAAPAAoAAQADAAIAAAAPAAsAAQADAAMAAAAMAAwAAQAAAAAAAAAMAA0AAQAAAAEAAAAMAA4AAQAAAAIAAAAMAA8AAQAAAAMAAAANAAwAAQABAAAAAAANAA0AAQABAAEAAAANAA4AAQABAAIAAAANAA8AAQABAAMAAAAOAAwAAQACAAAAAAAOAA0AAQACAAEAAAAOAA4AAQACAAIAAAAOAA8AAQACAAMAAAAPAAwAAQADAAAAAAAPAA0AAQADAAEAAAAPAA4AAQADAAIAAAAPAA8AAQADAAMAAAAMABAAAQAAAAAAAAAMABEAAQAAAAEAAAAMABIAAQAAAAIAAAAMABMAAQAAAAMAAAANABAAAQABAAAAAAANABEAAQABAAEAAAANABIAAQABAAIAAAANABMAAQABAAMAAAAOABAAAQACAAAAAAAOABEAAQACAAEAAAAOABIAAQACAAIAAAAOABMAAQACAAMAAAAPABAAAQADAAAAAAAPABEAAQADAAEAAAAPABIAAQADAAIAAAAPABMAAQADAAMAAAAQAAAAAQAAAAAAAAAQAAEAAQAAAAEAAAAQAAIAAQAAAAIAAAAQAAMAAQAAAAMAAAARAAAAAQABAAAAAAARAAEAAQABAAEAAAARAAIAAQABAAIAAAARAAMAAQABAAMAAAASAAAAAQAAAAAAAAASAAEAAQAAAAEAAAASAAIAAQACAAIAAAASAAMAAQACAAMAAAATAAAAAQABAAAAAAATAAEAAQABAAEAAAATAAIAAQADAAIAAAATAAMAAQADAAMAAAAQAAQAAQAAAAAAAAAQAAUAAQAAAAEAAAARAAQAAQABAAAAAAARAAUAAQABAAEAAAARAAYAAQABAAIAAAARAAcAAQABAAMAAAASAAQAAQACAAAAAAASAAUAAQACAAEAAAASAAYAAQACAAIAAAASAAcAAQACAAMAAAATAAQAAQADAAAAAAATAAUAAQADAAEAAAATAAYAAQADAAIAAAATAAcAAQADAAMAAAAQAAgAAQAAAAAAAAAQAAkAAQAAAAEAAAAQAAoAAQAAAAIAAAAQAAsAAQAAAAMAAAARAAgAAQABAAAAAAARAAkAAQABAAEAAAARAAoAAQABAAIAAAARAAsAAQABAAMAAAASAAgAAQACAAAAAAASAAkAAQACAAEAAAASAAoAAQACAAIAAAASAAsAAQACAAMAAAATAAgAAQADAAAAAAATAAkAAQADAAEAAAATAAoAAQADAAIAAAATAAsAAQADAAMAAAAQAAwAAQAAAAAAAAAQAA0AAQAAAAEAAAAQAA4AAQAAAAIAAAAQAA8AAQAAAAMAAAARAAwAAQABAAAAAAARAA0AAQABAAEAAAARAA4AAQABAAIAAAARAA8AAQABAAMAAAASAAwAAQACAAAAAAASAA0AAQACAAEAAAASAA4AAQACAAIAAAASAA8AAQACAAMAAAATAAwAAQADAAAAAAATAA0AAQADAAEAAAATAA4AAQADAAIAAAATAA8AAQADAAMAAAAQABAAAQAAAAAAAAAQABEAAQAAAAEAAAAQABIAAQAAAAIAAAAQABMAAQAAAAMAAAARABAAAQABAAAAAAARABEAAQABAAEAAAARABIAAQABAAIAAAARABMAAQABAAMAAAASABAAAQACAAAAAAASABEAAQACAAEAAAASABIAAQACAAIAAAASABMAAQACAAMAAAATABAAAQADAAAAAAATABEAAQADAAEAAAATABIAAQADAAIAAAATABMAAQADAAMAAAAUAAAAAQAAAAAAAAAUAAEAAQAAAAEAAAAUAAIAAQAAAAIAAAAUAAMAAQAAAAMAAAAVAAAAAQABAAAAAAAVAAEAAQABAAEAAAAVAAIAAQABAAIAAAAVAAMAAQABAAMAAAAWAAAAAQAAAAAAAAAWAAEAAQAAAAEAAAAWAAIAAQACAAIAAAAWAAMAAQACAAMAAAAXAAAAAQABAAAAAAAXAAEAAQABAAEAAAAXAAIAAQADAAIAAAAXAAMAAQADAAMAAAAUAAQAAQAAAAAAAAAUAAUAAQAAAAEAAAAUAAYAAQAAAAIAAAAUAAcAAQAAAAMAAAAVAAQAAQABAAAAAAAVAAUAAQABAAEAAAAVAAYAAQABAAIAAAAVAAcAAQABAAMAAAAWAAQAAQACAAAAAAAWAAUAAQACAAEAAAAWAAYAAQACAAIAAAAWAAcAAQACAAMAAAAXAAQAAQADAAAAAAAXAAUAAQADAAEAAAAXAAYAAQADAAIAAAAXAAcAAQADAAMAAAAUAAgAAQAAAAAAAAAUAAkAAQAAAAEAAAAUAAoAAQAAAAIAAAAUAAsAAQAAAAMAAAAVAAgAAQABAAAAAAAVAAkAAQABAAEAAAAVAAoAAQABAAIAAAAVAAsAAQABAAMAAAAWAAgAAQACAAAAAAAWAAkAAQACAAEAAAAWAAoAAQACAAIAAAAWAAsAAQACAAMAAAAXAAgAAQADAAAAAAAXAAkAAQADAAEAAAAXAAoAAQADAAIAAAAXAAsAAQADAAMAAAAUAAwAAQAAAAAAAAAUAA0AAQAAAAEAAAAUAA4AAQAAAAIAAAAUAA8AAQAAAAMAAAAVAAwAAQABAAAAAAAVAA0AAQABAAEAAAAVAA4AAQABAAIAAAAVAA8AAQABAAMAAAAWAAwAAQACAAAAAAAWAA0AAQACAAEAAAAWAA4AAQACAAIAAAAWAA8AAQACAAMAAAAXAAwAAQADAAAAAAAXAA0AAQADAAEAAAAXAA4AAQADAAIAAAAXAA8AAQADAAMAAAAUABAAAQAAAAAAAAAUABEAAQAAAAEAAAAUABIAAQAAAAIAAAAUABMAAQAAAAMAAAAVABAAAQABAAAAAAAVABEAAQABAAEAAAAVABIAAQABAAIAAAAVABMAAQABAAMAAAAWABAAAQACAAAAAAAWABEAAQACAAEAAAAWABIAAQACAAIAAAAWABMAAQACAAMAAAAXABAAAQADAAAAAAAXABEAAQADAAEAAAAXABIAAQADAAIAAAAXABMAAQADAAMAAAAYAAAAAQAAAAAAAAAYAAEAAQAAAAEAAAAYAAIAAQAAAAIAAAAYAAMAAQAAAAMAAAAZAAAAAQABAAAAAAAZAAEAAQABAAEAAAAZAAIAAQABAAIAAAAZAAMAAQABAAMAAAAaAAAAAQAAAAAAAAAaAAEAAQAAAAEAAAAaAAIAAQACAAIAAAAaAAMAAQACAAMAAAAbAAAAAQABAAAAAAAbAAEAAQABAAEAAAAbAAIAAQADAAIAAAAbAAMAAQADAAMAAAAYAAQAAQAAAAAAAAAYAAUAAQAAAAEAAAAYAAYAAQAAAAIAAAAYAAcAAQAAAAMAAAAZAAQAAQABAAAAAAAZAAUAAQABAAEAAAAZAAYAAQABAAIAAAAZAAcAAQABAAMAAAAaAAQAAQACAAAAAAAaAAUAAQACAAEAAAAaAAYAAQACAAIAAAAaAAcAAQACAAMAAAAbAAQAAQADAAAAAAAbAAUAAQADAAEAAAAbAAYAAQADAAIAAAAbAAcAAQADAAMAAAAYAAgAAQAAAAAAAAAYAAkAAQAAAAEAAAAYAAoAAQAAAAIAAAAYAAsAAQAAAAMAAAAZAAgAAQABAAAAAAAZAAkAAQABAAEAAAAZAAoAAQABAAIAAAAZAAsAAQABAAMAAAAaAAgAAQACAAAAAAAaAAkAAQACAAEAAAAaAAoAAQACAAIAAAAaAAsAAQACAAMAAAAbAAgAAQADAAAAAAAbAAkAAQADAAEAAAAbAAoAAQADAAIAAAAbAAsAAQADAAMAAAAYAAwAAQAAAAAAAAAYAA0AAQAAAAEAAAAYAA4AAQAAAAIAAAAYAA8AAQAAAAMAAAAZAAwAAQABAAAAAAAZAA0AAQABAAEAAAAZAA4AAQABAAIAAAAZAA8AAQABAAMAAAAaAAwAAQACAAAAAAAaAA0AAQACAAEAAAAaAA4AAQACAAIAAAAaAA8AAQACAAMAAAAbAAwAAQADAAAAAAAbAA0AAQADAAEAAAAbAA4AAQADAAIAAAAbAA8AAQADAAMAAAAYABAAAQAAAAAAAAAYABEAAQAAAAEAAAAYABIAAQAAAAIAAAAYABMAAQAAAAMAAAAZABAAAQABAAAAAAAZABEAAQABAAEAAAAZABIAAQABAAIAAAAZABMAAQABAAMAAAAaABAAAQACAAAAAAAaABEAAQACAAEAAAAaABIAAQACAAIAAAAaABMAAQACAAMAAAAbABAAAQADAAAAAAAbABEAAQADAAEAAAAbABIAAQADAAIAAAAbABMAAQADAAMAAAAcAAAAAQAAAAAAAAAcAAEAAQAAAAEAAAAcAAIAAQAAAAIAAAAcAAMAAQAAAAMAAAAdAAAAAQABAAAAAAAdAAEAAQABAAEAAAAdAAIAAQABAAIAAAAdAAMAAQABAAMAAAAeAAAAAQAAAAAAAAAeAAEAAQAAAAEAAAAeAAIAAQACAAIAAAAeAAMAAQACAAMAAAAfAAAAAQABAAAAAAAfAAEAAQABAAEAAAAfAAIAAQADAAIAAAAfAAMAAQADAAMAAAAcAAQAAQAAAAAAAAAcAAUAAQAAAAEAAAAcAAYAAQAAAAIAAAAcAAcAAQAAAAMAAAAdAAQAAQABAAAAAAAdAAUAAQABAAEAAAAdAAYAAQABAAIAAAAdAAcAAQABAAMAAAAeAAQAAQACAAAAAAAeAAUAAQACAAEAAAAeAAYAAQACAAIAAAAeAAcAAQACAAMAAAAfAAQAAQADAAAAAAAfAAUAAQADAAEAAAAfAAYAAQADAAIAAAAfAAcAAQADAAMAAAAcAAgAAQAAAAAAAAAcAAkAAQAAAAEAAAAcAAoAAQAAAAIAAAAcAAsAAQAAAAMAAAAdAAgAAQABAAAAAAAdAAkAAQABAAEAAAAdAAoAAQABAAIAAAAdAAsAAQABAAMAAAAeAAgAAQACAAAAAAAeAAkAAQACAAEAAAAeAAoAAQACAAIAAAAeAAsAAQACAAMAAAAfAAgAAQADAAAAAAAfAAkAAQADAAEAAAAfAAoAAQADAAIAAAAfAAsAAQADAAMAAAAcAAwAAQAAAAAAAAAcAA0AAQAAAAEAAAAcAA4AAQAAAAIAAAAcAA8AAQAAAAMAAAAdAAwAAQABAAAAAAAdAA0AAQABAAEAAAAdAA4AAQABAAIAAAAdAA8AAQABAAMAAAAeAAwAAQACAAAAAAAeAA0AAQACAAEAAAAeAA4AAQACAAIAAAAeAA8AAQACAAMAAAAfAAwAAQADAAAAAAAfAA0AAQADAAEAAAAfAA4AAQADAAIAAAAfAA8AAQADAAMAAAAcABAAAQAAAAAAAAAcABEAAQAAAAEAAAAcABIAAQAAAAIAAAAcABMAAQAAAAMAAAAdABAAAQABAAAAAAAdABEAAQABAAEAAAAdABIAAQABAAIAAAAdABMAAQABAAMAAAAeABAAAQACAAAAAAAeABEAAQACAAEAAAAeABIAAQACAAIAAAAeABMAAQACAAMAAAAfABAAAQADAAAAAAAfABEAAQADAAEAAAAfABIAAQADAAIAAAAfABMAAQADAAMAAAAgAAAAAQAAAAAAAAAgAAEAAQAAAAEAAAAgAAIAAQAAAAIAAAAgAAMAAQAAAAMAAAAhAAAAAQABAAAAAAAhAAEAAQABAAEAAAAhAAIAAQABAAIAAAAhAAMAAQABAAMAAAAiAAAAAQAAAAAAAAAiAAEAAQAAAAEAAAAiAAIAAQACAAIAAAAiAAMAAQACAAMAAAAjAAAAAQABAAAAAAAjAAEAAQABAAEAAAAjAAIAAQADAAIAAAAjAAMAAQADAAMAAAAgAAQAAQAAAAAAAAAgAAUAAQAAAAEAAAAgAAYAAQAAAAIAAAAgAAcAAQAAAAMAAAAhAAQAAQABAAAAAAAhAAUAAQABAAEAAAAhAAYAAQABAAIAAAAhAAcAAQABAAMAAAAiAAQAAQACAAAAAAAiAAUAAQACAAEAAAAiAAYAAQACAAIAAAAiAAcAAQACAAMAAAAjAAQAAQADAAAAAAAjAAUAAQADAAEAAAAjAAYAAQADAAIAAAAjAAcAAQADAAMAAAAgAAgAAQAAAAAAAAAgAAkAAQAAAAEAAAAgAAoAAQAAAAIAAAAgAAsAAQAAAAMAAAAhAAgAAQABAAAAAAAhAAkAAQABAAEAAAAhAAoAAQABAAIAAAAhAAsAAQABAAMAAAAiAAgAAQACAAAAAAAiAAkAAQACAAEAAAAiAAoAAQACAAIAAAAiAAsAAQACAAMAAAAjAAgAAQADAAAAAAAjAAkAAQADAAEAAAAjAAoAAQADAAIAAAAjAAsAAQADAAMAAAAgAAwAAQAAAAAAAAAgAA0AAQAAAAEAAAAgAA4AAQAAAAIAAAAgAA8AAQAAAAMAAAAhAAwAAQABAAAAAAAhAA0AAQABAAEAAAAhAA4AAQABAAIAAAAhAA8AAQABAAMAAAAiAAwAAQACAAAAAAAiAA0AAQACAAEAAAAiAA4AAQACAAIAAAAiAA8AAQACAAMAAAAjAAwAAQADAAAAAAAjAA0AAQADAAEAAAAjAA4AAQADAAIAAAAjAA8AAQADAAMAAAAgABAAAQAAAAAAAAAgABEAAQAAAAEAAAAgABIAAQAAAAIAAAAgABMAAQAAAAMAAAAhABAAAQABAAAAAAAhABEAAQABAAEAAAAhABIAAQABAAIAAAAhABMAAQABAAMAAAAiABAAAQACAAAAAAAiABEAAQACAAEAAAAiABIAAQACAAIAAAAiABMAAQACAAMAAAAjABAAAQADAAAAAAAjABEAAQADAAEAAAAjABIAAQADAAIAAAAjABMAAQADAAMAAAAkAAAAAQAAAAAAAAAkAAEAAQAAAAEAAAAkAAIAAQAAAAIAAAAkAAMAAQAAAAMAAAAlAAAAAQABAAAAAAAlAAEAAQABAAEAAAAlAAIAAQABAAIAAAAlAAMAAQABAAMAAAAmAAAAAQAAAAAAAAAmAAEAAQAAAAEAAAAmAAIAAQACAAIAAAAmAAMAAQACAAMAAAAnAAAAAQABAAAAAAAnAAEAAQABAAEAAAAnAAIAAQADAAIAAAAnAAMAAQADAAMAAAAkAAQAAQAAAAAAAAAkAAUAAQAAAAEAAAAkAAYAAQAAAAIAAAAkAAcAAQAAAAMAAAAlAAQAAQABAAAAAAAlAAUAAQABAAEAAAAlAAYAAQABAAIAAAAlAAcAAQABAAMAAAAmAAQAAQACAAAAAAAmAAUAAQACAAEAAAAmAAYAAQACAAIAAAAmAAcAAQACAAMAAAAnAAQAAQADAAAAAAAnAAUAAQADAAEAAAAnAAYAAQADAAIAAAAnAAcAAQADAAMAAAAkAAgAAQAAAAAAAAAkAAkAAQAAAAEAAAAkAAoAAQAAAAIAAAAkAAsAAQAAAAMAAAAlAAgAAQABAAAAAAAlAAkAAQABAAEAAAAlAAoAAQABAAIAAAAlAAsAAQABAAMAAAAmAAgAAQACAAAAAAAmAAkAAQACAAEAAAAmAAoAAQACAAIAAAAmAAsAAQACAAMAAAAnAAgAAQADAAAAAAAnAAkAAQADAAEAAAAnAAoAAQADAAIAAAAnAAsAAQADAAMAAAAkAAwAAQAAAAAAAAAkAA0AAQAAAAEAAAAkAA4AAQAAAAIAAAAkAA8AAQAAAAMAAAAlAAwAAQABAAAAAAAlAA0AAQABAAEAAAAlAA4AAQABAAIAAAAlAA8AAQABAAMAAAAmAAwAAQACAAAAAAAmAA0AAQACAAEAAAAmAA4AAQACAAIAAAAmAA8AAQACAAMAAAAnAAwAAQADAAAAAAAnAA0AAQADAAEAAAAnAA4AAQADAAIAAAAnAA8AAQADAAMAAAAkABAAAQAAAAAAAAAkABEAAQAAAAEAAAAkABIAAQAAAAAAAAAkABMAAQAAAAEAAAAlABAAAQABAAAAAAAlABEAAQABAAEAAAAlABIAAQABAAAAAAAlABMAAQABAAEAAAAmABAAAQACAAAAAAAmABEAAQACAAEAAAAmABIAAQAAAAAAAAAmABMAAQAAAAEAAAAnABAAAQADAAAAAAAnABEAAQADAAEAAAAnABIAAQABAAAAAAAnABMAAQABAAEAAAAQAAYAAQAAAAIAAAAMAAsAAQAAAAMAAAANAAoAAQABAAIAAAAOAAkAAQACAAEAAAAOAAgAAQACAAAAAAAPAAcAAQADAAMAAAAQAAcAAQAAAAMAAAAPAAgAAQADAAAAAAA=")
+tile_set = SubResource("TileSet_mnq6b")
+
+[node name="SFX_select" type="AudioStreamPlayer2D" parent="." unique_id=2059269895]
+process_mode = 3
+stream = ExtResource("6_45ydu")
+bus = &"sfx"
+
+[node name="SFX_reset" type="AudioStreamPlayer2D" parent="." unique_id=2070815476]
+stream = ExtResource("7_77py5")
+bus = &"sfx"
+
+[connection signal="pressed" from="opções/VBoxContainer/controles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="opções/VBoxContainer/audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="opções/VBoxContainer/video" to="." method="_on_video_pressed"]
+[connection signal="pressed" from="opções/VBoxContainer/jogo" to="." method="_on_jogo_pressed"]
+[connection signal="pressed" from="opções/VBoxContainer/voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="controles/ContentHolder/controle_mobile/editar_mobile" to="." method="_on_editar_mobile_pressed"]
+[connection signal="pressed" from="controles/ContentHolder/voltar_controles" to="." method="_on_voltar_controles_pressed"]
+[connection signal="drag_ended" from="audio/ContentHolder/vol_geral/volume_geral" to="." method="_on_volume_geral_drag_ended"]
+[connection signal="value_changed" from="audio/ContentHolder/vol_geral/volume_geral" to="." method="_on_volume_geral_value_changed"]
+[connection signal="drag_ended" from="audio/ContentHolder/SFXs/efeitos sonoros" to="." method="_on_efeitos_sonoros_drag_ended"]
+[connection signal="value_changed" from="audio/ContentHolder/SFXs/efeitos sonoros" to="." method="_on_efeitos_sonoros_value_changed"]
+[connection signal="pressed" from="audio/ContentHolder/voltar_audio" to="." method="_on_voltar_audio_pressed"]
+[connection signal="pressed" from="audio/ContentHolder/salvar_audio" to="audio/ContentHolder/salvar_audio" method="_on_pressed"]
+[connection signal="toggled" from="video/ContentHolder/video/tela_cheia" to="video/ContentHolder/video/tela_cheia" method="_on_toggled"]
+[connection signal="toggled" from="video/ContentHolder/video/VSync" to="video/ContentHolder/video/VSync" method="_on_toggled"]
+[connection signal="value_changed" from="video/ContentHolder/video2/iluminação_slider" to="." method="_on_iluminação_slider_value_changed"]
+[connection signal="toggled" from="video/ContentHolder/tela/canvas_layer" to="video/ContentHolder/tela/canvas_layer" method="_on_toggled"]
+[connection signal="toggled" from="video/ContentHolder/tela/viewport" to="video/ContentHolder/tela/viewport" method="_on_toggled"]
+[connection signal="pressed" from="video/ContentHolder/voltar_video" to="." method="_on_voltar_video_pressed"]
+[connection signal="pressed" from="video/ContentHolder/salvar_video" to="video/ContentHolder/salvar_video" method="_on_pressed"]
+[connection signal="pressed" from="jogo_group/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="jogo_group/sim" to="." method="_on_sim_pressed"]
+[connection signal="pressed" from="jogo_group/não" to="." method="_on_não_pressed"]
+[connection signal="pressed" from="jogo_group/voltar_jogo" to="." method="_on_voltar_jogo_pressed"]

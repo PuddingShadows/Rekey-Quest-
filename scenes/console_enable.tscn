@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cumpkxj4n57ny"]
+
+[ext_resource type="Texture2D" uid="uid://mveque72oo5n" path="res://assets/Other/Shadow.png" id="1_8soq6"]
+[ext_resource type="Script" uid="uid://d3pcngkdbfy6n" path="res://scripts/console_btn.gd" id="2_w045e"]
+[ext_resource type="Script" uid="uid://bycg3q4pglu8o" path="res://scripts/enable.gd" id="3_qtmjm"]
+[ext_resource type="Script" uid="uid://k1m8b0olwm7j" path="res://scripts/fps.gd" id="4_qtmjm"]
+[ext_resource type="FontFile" uid="uid://uen7wraggy3u" path="res://assets/huds/fonts/cc.yal.7w7.block.ttf" id="5_46eig"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_egedy"]
+font = ExtResource("5_46eig")
+font_size = 32
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="console_enable" type="Node2D" unique_id=1407725110]
+
+[node name="console_btn" type="TouchScreenButton" parent="." unique_id=1786384086]
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(289.00003, 288)
+scale = Vector2(5.9999976, 2)
+texture_normal = ExtResource("1_8soq6")
+script = ExtResource("2_w045e")
+
+[node name="enable" type="TouchScreenButton" parent="." unique_id=1690188767]
+position = Vector2(576, 288.00003)
+scale = Vector2(2.0624988, 1.9999975)
+texture_normal = ExtResource("1_8soq6")
+script = ExtResource("3_qtmjm")
+
+[node name="fps" type="CanvasLayer" parent="." unique_id=1147895641]
+visible = false
+script = ExtResource("4_qtmjm")
+
+[node name="fps" type="Label" parent="fps" unique_id=1742120194]
+offset_left = 455.0
+offset_top = 5.0
+offset_right = 567.0
+offset_bottom = 28.0
+text = "fps:n/"
+label_settings = SubResource("LabelSettings_egedy")
+
+[connection signal="pressed" from="console_btn" to="console_btn" method="_on_pressed"]
+[connection signal="pressed" from="enable" to="enable" method="_on_pressed"]

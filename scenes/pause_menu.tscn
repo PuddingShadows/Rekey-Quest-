@@ -1,0 +1,182 @@
+[gd_scene format=4 uid="uid://doph0gv5042eo"]
+
+[ext_resource type="Script" uid="uid://x8uu3ixopk48" path="res://scripts/pause/pause_menu.gd" id="1_myx47"]
+[ext_resource type="Theme" uid="uid://bygvyxbdiy3qw" path="res://pause_menu.tres" id="1_n87rw"]
+[ext_resource type="FontFile" uid="uid://uen7wraggy3u" path="res://assets/huds/fonts/cc.yal.7w7.block.ttf" id="3_kukqi"]
+[ext_resource type="Texture2D" uid="uid://bxk40iglejbfb" path="res://assets/Menu/Buttons/Play.png" id="4_7l7mv"]
+[ext_resource type="Script" uid="uid://dawbctv01sji0" path="res://scripts/play/play.gd" id="5_v4r4p"]
+[ext_resource type="Texture2D" uid="uid://ywsfxl1735jf" path="res://assets/Menu/Buttons/Restart.png" id="6_knqa7"]
+[ext_resource type="Texture2D" uid="uid://bb18wu8ft1a5" path="res://assets/Background/Gray.png" id="6_v4r4p"]
+[ext_resource type="AudioStream" uid="uid://dg3gx4twi0rj7" path="res://assets/sons/select.wav" id="7_1s2dm"]
+[ext_resource type="Script" uid="uid://bukefg71cad37" path="res://scripts/restart/restart.gd" id="7_71k7c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5d2l8"]
+font = ExtResource("3_kukqi")
+font_size = 64
+font_color = Color(1, 0.66917914, 0.61735123, 1)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_myx47"]
+default_font_size = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_165qr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n2uxo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c5574"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xk5m3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gur0q"]
+
+[sub_resource type="Theme" id="Theme_1s2dm"]
+Button/colors/icon_pressed_color = Color(0.35, 0.35, 0.35, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_165qr")
+Button/styles/focus = SubResource("StyleBoxEmpty_n2uxo")
+Button/styles/hover = SubResource("StyleBoxEmpty_c5574")
+Button/styles/normal = SubResource("StyleBoxEmpty_xk5m3")
+Button/styles/pressed = SubResource("StyleBoxEmpty_gur0q")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1s2dm"]
+texture = ExtResource("6_v4r4p")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_88e76"]
+sources/0 = SubResource("TileSetAtlasSource_1s2dm")
+
+[node name="pause_menu" type="CanvasLayer" unique_id=1696223555]
+process_mode = 2
+layer = 6
+script = ExtResource("1_myx47")
+
+[node name="bg_overlay" type="ColorRect" parent="." unique_id=774234629]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="menu_holder" type="VBoxContainer" parent="." unique_id=900322306]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -50.0
+offset_right = 74.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="resume_btn" type="Button" parent="menu_holder" unique_id=1279588003]
+layout_mode = 2
+theme = ExtResource("1_n87rw")
+text = "VOLTAR"
+
+[node name="restart_btn" type="Button" parent="menu_holder" unique_id=741485199]
+layout_mode = 2
+theme = ExtResource("1_n87rw")
+text = "REINICIAR"
+
+[node name="options_btn" type="Button" parent="menu_holder" unique_id=1728975074]
+layout_mode = 2
+theme = ExtResource("1_n87rw")
+text = " OPÇÕES "
+
+[node name="quit_btn" type="Button" parent="menu_holder" unique_id=1704965767]
+layout_mode = 2
+theme = ExtResource("1_n87rw")
+text = "SAIR"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1848224749]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_right = 80.0
+offset_bottom = 28.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_constants/margin_top = 25
+
+[node name="paused_label" type="Label" parent="MarginContainer" unique_id=1470608643]
+layout_direction = 1
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/line_spacing = 3
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("3_kukqi")
+text = "pause"
+label_settings = SubResource("LabelSettings_5d2l8")
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=2082053982]
+visible = false
+z_index = 4
+offset_left = 118.0
+offset_top = 101.0
+offset_right = 557.0
+offset_bottom = 242.0
+theme = SubResource("Theme_myx47")
+text = "em produção.
+
+obrigado pela compreensão "
+
+[node name="play" type="Button" parent="." unique_id=2027184988]
+z_index = 6
+offset_left = 613.0
+offset_top = 4.0
+offset_right = 634.0
+offset_bottom = 26.0
+theme = SubResource("Theme_1s2dm")
+icon = ExtResource("4_7l7mv")
+flat = true
+script = ExtResource("5_v4r4p")
+
+[node name="restart" type="Button" parent="." unique_id=1653992375]
+z_index = 6
+offset_left = 613.0
+offset_top = 36.0
+offset_right = 634.0
+offset_bottom = 58.0
+theme = SubResource("Theme_1s2dm")
+icon = ExtResource("6_knqa7")
+flat = true
+script = ExtResource("7_71k7c")
+
+[node name="background" type="TileMapLayer" parent="." unique_id=260248710]
+tile_map_data = PackedByteArray("AAAmAAAAAAAAAAAAAAAmAAEAAAAAAAEAAAAnAAAAAAABAAAAAAAnAAEAAAABAAEAAAAmAAIAAAAAAAAAAAAmAAMAAAAAAAEAAAAnAAIAAAABAAAAAAAnAAMAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_88e76")
+
+[node name="SFX_select" type="AudioStreamPlayer2D" parent="." unique_id=1499344109]
+process_mode = 3
+stream = ExtResource("7_1s2dm")
+bus = &"sfx"
+
+[connection signal="pressed" from="menu_holder/resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/restart_btn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="menu_holder/options_btn" to="." method="_on_options_btn_pressed"]
+[connection signal="pressed" from="menu_holder/quit_btn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="play" to="play" method="_on_pressed"]
+[connection signal="pressed" from="restart" to="restart" method="_on_pressed"]

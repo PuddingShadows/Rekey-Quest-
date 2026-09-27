@@ -1,0 +1,408 @@
+[gd_scene format=3 uid="uid://35p1eaexcbvd"]
+
+[ext_resource type="Script" uid="uid://88coqfe7iegu" path="res://scripts/porta/porta_area1.gd" id="1_o55sm"]
+[ext_resource type="Texture2D" uid="uid://dhib4snv4i0ow" path="res://portas e chaves/normal levels/porta.png" id="2_h6ya6"]
+[ext_resource type="Texture2D" uid="uid://c8o8ohy23nb4b" path="res://portas e chaves/normal levels/porta_aberta.png" id="3_h6ya6"]
+[ext_resource type="FontFile" uid="uid://uen7wraggy3u" path="res://assets/huds/fonts/cc.yal.7w7.block.ttf" id="4_algdu"]
+[ext_resource type="Texture2D" uid="uid://tjlhal16fmxp" path="res://assets/huds/stars.png" id="5_k6vx3"]
+[ext_resource type="Texture2D" uid="uid://ywsfxl1735jf" path="res://assets/Menu/Buttons/Restart.png" id="6_8r4wu"]
+[ext_resource type="Texture2D" uid="uid://dyoksvl62gneu" path="res://assets/huds/star_no.png" id="6_geadt"]
+[ext_resource type="Script" uid="uid://mmu7bcpxc2xg" path="res://scripts/continuar_end1.gd" id="6_oy2nr"]
+[ext_resource type="Texture2D" uid="uid://b4lsl7u37op44" path="res://assets/Menu/Buttons/button_background.png" id="6_t4liu"]
+[ext_resource type="Script" uid="uid://cb1o7wh3g8tfc" path="res://scripts/restart/restart_end.gd" id="8_c62s7"]
+[ext_resource type="Texture2D" uid="uid://88kqffyquo7p" path="res://assets/huds/clock.png" id="8_xmk72"]
+[ext_resource type="Texture2D" uid="uid://cq2eb337b31bs" path="res://assets/Items/Fruits/morango.png" id="9_a72wj"]
+[ext_resource type="Texture2D" uid="uid://ca8a21t1264kn" path="res://assets/huds/deaths.png" id="10_c62s7"]
+[ext_resource type="AudioStream" uid="uid://dtncri4nxnqqo" path="res://assets/sons/abrindo.wav" id="14_7cy40"]
+[ext_resource type="AudioStream" uid="uid://dg3gx4twi0rj7" path="res://assets/sons/select.wav" id="14_8qyjd"]
+[ext_resource type="AudioStream" uid="uid://53hg1j6o0dvi" path="res://assets/sons/star.wav" id="15_peibn"]
+[ext_resource type="AudioStream" uid="uid://cacfw8vmqgnkx" path="res://assets/sons/morte.wav" id="16_3h4ct"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pmpj"]
+size = Vector2(35, 48)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tt1mq"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.4332, 0.52212, 0.57, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.304, 0.3664, 0.4, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_k6vx3"]
+font = ExtResource("4_algdu")
+font_size = 32
+font_color = Color(0.3528, 0.42186671, 0.56, 1)
+outline_size = 8
+outline_color = Color(0.1575, 0.18833335, 0.25, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6vx3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8r4wu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t4liu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmk72"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wbq81"]
+
+[sub_resource type="Theme" id="Theme_k6vx3"]
+Button/colors/font_color = Color(0.3528, 0.42186671, 0.56, 1)
+Button/colors/font_focus_color = Color(0.3528, 0.42186671, 0.56, 1)
+Button/colors/font_hover_color = Color(0.3213, 0.3842, 0.51, 1)
+Button/colors/font_hover_pressed_color = Color(0.33389997, 0.39926666, 0.53, 1)
+Button/colors/font_outline_color = Color(0.1575, 0.18833335, 0.25, 1)
+Button/colors/font_pressed_color = Color(0.2079, 0.24860004, 0.33, 1)
+Button/constants/outline_size = 8
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("4_algdu")
+Button/styles/disabled = SubResource("StyleBoxEmpty_k6vx3")
+Button/styles/focus = SubResource("StyleBoxEmpty_8r4wu")
+Button/styles/hover = SubResource("StyleBoxEmpty_t4liu")
+Button/styles/normal = SubResource("StyleBoxEmpty_xmk72")
+Button/styles/pressed = SubResource("StyleBoxEmpty_wbq81")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a72wj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c62s7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oy2nr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_geadt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7cy40"]
+
+[sub_resource type="Theme" id="Theme_peibn"]
+Button/colors/icon_pressed_color = Color(0.38857287, 0.38857287, 0.38857287, 1)
+Button/icons/icon = null
+Button/styles/disabled = SubResource("StyleBoxEmpty_a72wj")
+Button/styles/focus = SubResource("StyleBoxEmpty_c62s7")
+Button/styles/hover = SubResource("StyleBoxEmpty_oy2nr")
+Button/styles/normal = SubResource("StyleBoxEmpty_geadt")
+Button/styles/pressed = SubResource("StyleBoxEmpty_7cy40")
+
+[sub_resource type="Animation" id="Animation_geadt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("porta_concluida/painel:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 300)]
+}
+
+[sub_resource type="Animation" id="Animation_oy2nr"]
+resource_name = "fade_slide"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("porta_concluida/painel:offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 300), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7cy40"]
+_data = {
+&"RESET": SubResource("Animation_geadt"),
+&"fade_slide": SubResource("Animation_oy2nr")
+}
+
+[sub_resource type="Animation" id="Animation_peibn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("porta_aberta:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7cy40"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("porta_aberta:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3h4ct"]
+_data = {
+&"RESET": SubResource("Animation_peibn"),
+&"fade_in": SubResource("Animation_7cy40")
+}
+
+[node name="porta-area" type="Area2D" unique_id=784219808]
+z_index = 1
+collision_layer = 16
+script = ExtResource("1_o55sm")
+
+[node name="porta" type="Sprite2D" parent="." unique_id=749662430]
+position = Vector2(47.499996, 1.4999995)
+scale = Vector2(0.90624976, 0.703125)
+texture = ExtResource("2_h6ya6")
+
+[node name="porta_aberta" type="Sprite2D" parent="." unique_id=498438292]
+visible = false
+position = Vector2(47.5, 1.5)
+scale = Vector2(0.906, 0.703)
+texture = ExtResource("3_h6ya6")
+
+[node name="collision" type="CollisionShape2D" parent="." unique_id=1625454218]
+visible = false
+z_index = -1
+position = Vector2(47.5, 1)
+shape = SubResource("RectangleShape2D_0pmpj")
+
+[node name="porta_concluida" type="CanvasLayer" parent="." unique_id=2094797764]
+process_mode = 3
+layer = 7
+
+[node name="ColorRect" type="ColorRect" parent="porta_concluida" unique_id=1962231666]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="painel" type="CanvasLayer" parent="porta_concluida" unique_id=1115877732]
+process_mode = 3
+layer = 8
+offset = Vector2(0, 300)
+transform = Transform2D(1, 0, 0, 1, 0, 300)
+
+[node name="endpanel" type="PanelContainer" parent="porta_concluida/painel" unique_id=76223927]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -125.0
+offset_right = 210.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_tt1mq")
+
+[node name="container" type="VBoxContainer" parent="porta_concluida/painel/endpanel" unique_id=1027505257]
+layout_mode = 2
+
+[node name="título" type="Label" parent="porta_concluida/painel/endpanel/container" unique_id=2011351333]
+layout_mode = 2
+text = "PORTA CONCLUÍDA!"
+label_settings = SubResource("LabelSettings_k6vx3")
+horizontal_alignment = 1
+
+[node name="sem_estrela0_anim" type="Sprite2D" parent="porta_concluida/painel/endpanel/container" unique_id=341353571]
+position = Vector2(-200, 80)
+scale = Vector2(4, 4)
+texture = ExtResource("6_geadt")
+
+[node name="estrela0_anim" type="Sprite2D" parent="porta_concluida/painel/endpanel/container" unique_id=1699796861]
+position = Vector2(-200, 80)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("5_k6vx3")
+
+[node name="estrela1" type="Sprite2D" parent="porta_concluida/painel/endpanel/container" unique_id=1941010795]
+visible = false
+position = Vector2(60, 80)
+scale = Vector2(4, 4)
+texture = ExtResource("5_k6vx3")
+
+[node name="sem_estrela1" type="Sprite2D" parent="porta_concluida/painel/endpanel/container" unique_id=552077799]
+position = Vector2(60, 80)
+scale = Vector2(4, 4)
+texture = ExtResource("6_geadt")
+
+[node name="estrela2" type="Sprite2D" parent="porta_concluida/painel/endpanel/container" unique_id=568453144]
+visible = false
+position = Vector2(185, 80)
+scale = Vector2(4, 4)
+texture = ExtResource("5_k6vx3")
+
+[node name="sem_estrela2" type="Sprite2D" parent="porta_concluida/painel/endpanel/container" unique_id=686256144]
+position = Vector2(185, 80)
+scale = Vector2(4, 4)
+texture = ExtResource("6_geadt")
+
+[node name="estrela3" type="Sprite2D" parent="porta_concluida/painel/endpanel/container" unique_id=1678210151]
+visible = false
+position = Vector2(310, 80)
+scale = Vector2(4, 4)
+texture = ExtResource("5_k6vx3")
+
+[node name="sem_estrela3" type="Sprite2D" parent="porta_concluida/painel/endpanel/container" unique_id=2126447559]
+position = Vector2(310, 80)
+scale = Vector2(4, 4)
+texture = ExtResource("6_geadt")
+
+[node name="texto1" type="Label" parent="porta_concluida/painel" unique_id=861647822]
+offset_left = 153.0
+offset_top = 175.0
+offset_right = 201.66666
+offset_bottom = 192.0
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_algdu")
+text = "tempo:
+00:10"
+horizontal_alignment = 1
+
+[node name="texto2" type="Label" parent="porta_concluida/painel" unique_id=999568607]
+offset_left = 271.0
+offset_top = 178.0
+offset_right = 327.0
+offset_bottom = 187.33333
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_algdu")
+text = "morango"
+horizontal_alignment = 1
+
+[node name="texto3" type="Label" parent="porta_concluida/painel" unique_id=1461499615]
+offset_left = 388.0
+offset_top = 180.0
+offset_right = 452.0
+offset_bottom = 189.33333
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_algdu")
+text = "0 mortes"
+horizontal_alignment = 1
+
+[node name="continuar" type="Button" parent="porta_concluida/painel" unique_id=594534946]
+z_index = 1
+texture_filter = 1
+texture_repeat = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = 73.0
+offset_right = 23.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.25, 1.25)
+size_flags_vertical = 8
+theme = SubResource("Theme_k6vx3")
+text = "continuar "
+script = ExtResource("6_oy2nr")
+
+[node name="button" type="Sprite2D" parent="porta_concluida/painel" unique_id=1805437046]
+position = Vector2(278.5, 247.4375)
+scale = Vector2(4.4038467, 2.581897)
+texture = ExtResource("6_t4liu")
+
+[node name="restart" type="Button" parent="porta_concluida/painel" unique_id=46693242]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 109.00003
+offset_top = 51.0
+offset_right = 130.00003
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+theme = SubResource("Theme_peibn")
+icon = ExtResource("6_8r4wu")
+script = ExtResource("8_c62s7")
+
+[node name="clock" type="Sprite2D" parent="porta_concluida/painel" unique_id=612248211]
+position = Vector2(205, 149)
+scale = Vector2(2, 2)
+texture = ExtResource("8_xmk72")
+
+[node name="strawberry" type="Sprite2D" parent="porta_concluida/painel" unique_id=1364536429]
+position = Vector2(336, 148)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("9_a72wj")
+hframes = 15
+
+[node name="deaths" type="Sprite2D" parent="porta_concluida/painel" unique_id=1449581697]
+position = Vector2(458, 147)
+scale = Vector2(2, 2)
+texture = ExtResource("10_c62s7")
+
+[node name="STX_select" type="AudioStreamPlayer2D" parent="porta_concluida/painel" unique_id=1476312216]
+process_mode = 3
+stream = ExtResource("14_8qyjd")
+volume_db = -10.0
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=1562730820]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_7cy40")
+
+[node name="fade_porta" type="AnimationPlayer" parent="." unique_id=2053398857]
+libraries/ = SubResource("AnimationLibrary_3h4ct")
+
+[node name="SFX_open" type="AudioStreamPlayer2D" parent="." unique_id=1406617404]
+stream = ExtResource("14_7cy40")
+bus = &"sfx"
+
+[node name="SFX_star" type="AudioStreamPlayer2D" parent="." unique_id=8395605]
+process_mode = 3
+stream = ExtResource("15_peibn")
+bus = &"sfx"
+
+[node name="SFX_star_fail" type="AudioStreamPlayer2D" parent="." unique_id=747321903]
+process_mode = 3
+stream = ExtResource("16_3h4ct")
+bus = &"sfx"
+
+[node name="SFX_select" type="AudioStreamPlayer2D" parent="." unique_id=1370190365]
+process_mode = 3
+stream = ExtResource("14_8qyjd")
+bus = &"sfx"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="pressed" from="porta_concluida/painel/continuar" to="porta_concluida/painel/continuar" method="_on_pressed"]
+[connection signal="pressed" from="porta_concluida/painel/restart" to="porta_concluida/painel/restart" method="_on_pressed"]

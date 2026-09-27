@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://diycvplk506gi"]
+
+[ext_resource type="Script" uid="uid://c7xslxt8e7twi" path="res://scripts/morango/strawberry_area.gd" id="1_gamio"]
+[ext_resource type="Texture2D" uid="uid://d2srwl8nij6ix" path="res://assets/Items/Fruits/Collected.png" id="2_2dnmn"]
+[ext_resource type="Texture2D" uid="uid://cq2eb337b31bs" path="res://assets/Items/Fruits/morango.png" id="3_8u3vp"]
+[ext_resource type="AudioStream" uid="uid://baffg7s2p5rbe" path="res://assets/sons/collect.wav" id="4_gamio"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv2c5"]
+atlas = ExtResource("2_2dnmn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk5wv"]
+atlas = ExtResource("2_2dnmn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqocs"]
+atlas = ExtResource("2_2dnmn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsafy"]
+atlas = ExtResource("2_2dnmn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tprl"]
+atlas = ExtResource("2_2dnmn")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p5a8"]
+atlas = ExtResource("2_2dnmn")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj782"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4ptd"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yc7k"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyesx"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sihw4"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pc16"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj7pn"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysl3k"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1f5k6"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r1qf"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gseam"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42k6c"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enlqs"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1l8ob"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2dqg"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c80s2"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_283e3"]
+atlas = ExtResource("3_8u3vp")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lv2c5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv2c5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk5wv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqocs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsafy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tprl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p5a8")
+}],
+"loop": 0,
+"name": &"collect",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cj782")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4ptd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yc7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyesx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sihw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pc16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kj7pn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysl3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1f5k6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0r1qf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gseam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42k6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enlqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1l8ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2dqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c80s2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_283e3")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 25.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cj782"]
+radius = 8.062258
+
+[node name="strawberry_area" type="Area2D" unique_id=306681861]
+collision_layer = 64
+script = ExtResource("1_gamio")
+
+[node name="strawberry" type="AnimatedSprite2D" parent="." unique_id=1063364992]
+z_index = 3
+texture_filter = 1
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_lv2c5")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="collisionMorango" type="CollisionShape2D" parent="." unique_id=1443572441]
+visible = false
+z_index = 3
+shape = SubResource("CircleShape2D_cj782")
+
+[node name="SFX_collect" type="AudioStreamPlayer2D" parent="." unique_id=220202962]
+stream = ExtResource("4_gamio")
+volume_db = -10.0
+bus = &"sfx"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="strawberry" to="." method="_on_strawberry_animation_finished"]

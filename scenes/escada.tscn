@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://d1webtya1pab3"]
+
+[ext_resource type="Texture2D" uid="uid://c4cpswkhgamg" path="res://assets/Other/escada.png" id="1_squk6"]
+[ext_resource type="Script" uid="uid://dbjeqs3hkk017" path="res://scripts/escada/bottom_area.gd" id="2_05wju"]
+[ext_resource type="Script" uid="uid://cqmk45u2l1pf3" path="res://scripts/escada/top_area.gd" id="3_squk6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3c67o"]
+size = Vector2(20, 14)
+
+[node name="escada" type="Node2D" unique_id=1684201545]
+
+[node name="escada_parte1" type="Sprite2D" parent="." unique_id=1158746308]
+texture = ExtResource("1_squk6")
+
+[node name="escada_parte2" type="Sprite2D" parent="." unique_id=1898754241]
+position = Vector2(0, -40)
+texture = ExtResource("1_squk6")
+
+[node name="escada parte3" type="Sprite2D" parent="." unique_id=2013671790]
+position = Vector2(0, -80)
+texture = ExtResource("1_squk6")
+
+[node name="bottom_area" type="Area2D" parent="." unique_id=2109140777]
+visible = false
+script = ExtResource("2_05wju")
+
+[node name="collision" type="CollisionShape2D" parent="bottom_area" unique_id=956471975]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_3c67o")
+
+[node name="top_area" type="Area2D" parent="." unique_id=1153186427]
+visible = false
+script = ExtResource("3_squk6")
+
+[node name="collision" type="CollisionShape2D" parent="top_area" unique_id=1135379250]
+position = Vector2(0, -93)
+shape = SubResource("RectangleShape2D_3c67o")
+
+[connection signal="body_entered" from="bottom_area" to="bottom_area" method="_on_body_entered"]
+[connection signal="body_exited" from="bottom_area" to="bottom_area" method="_on_body_exited"]
+[connection signal="body_entered" from="top_area" to="top_area" method="_on_body_entered"]
+[connection signal="body_exited" from="top_area" to="top_area" method="_on_body_exited"]
