@@ -23,13 +23,13 @@
 [ext_resource type="Texture2D" uid="uid://i1m5bc1rwq08" path="res://assets/Traps/Spikes/Idle.png" id="18_1yvwa"]
 [ext_resource type="Script" uid="uid://u00wbpctp3ut" path="res://scripts/sala secreta/sala_secreta_4.gd" id="19_4yna5"]
 [ext_resource type="PackedScene" uid="uid://35p1eaexcbvd" path="res://scenes/porta_area.tscn" id="19_im11s"]
-[ext_resource type="Script" uid="uid://d2vfohti8itx1" path="res://scripts/porta/porta_area4.gd" id="20_aetsv"]
 [ext_resource type="Script" uid="uid://b02fvuyfbbom3" path="res://scripts/sala secreta/sala_secreta_4_2.gd" id="21_hhagu"]
 [ext_resource type="PackedScene" uid="uid://b7leg4e527pma" path="res://scenes/key_area.tscn" id="21_hsh0i"]
 [ext_resource type="Script" uid="uid://cnse8x61u87ed" path="res://scripts/sala secreta/sala_secreta_4_3.gd" id="22_bb6yk"]
 [ext_resource type="PackedScene" uid="uid://diycvplk506gi" path="res://scenes/strawberry_area.tscn" id="23_40mp0"]
 [ext_resource type="Texture2D" uid="uid://dkn7qhj1qf3jy" path="res://assets/Terrain/Terrain (16x16).png" id="25_h2sae"]
 [ext_resource type="Texture2D" uid="uid://cy0bf6gdjvcvt" path="res://assets/Terrain/Terrain2 (16x16).png" id="26_y6ny0"]
+[ext_resource type="Script" uid="uid://c2c87c8552ik1" path="res://scripts/porta/porta_area.gd" id="27_86yb6"]
 [ext_resource type="Texture2D" uid="uid://dhib4snv4i0ow" path="res://portas e chaves/normal levels/porta.png" id="27_bg064"]
 [ext_resource type="Texture2D" uid="uid://cigjlpvrxuiqf" path="res://assets/Terrain/Terrain3 (16x16).png" id="28_5w0kk"]
 [ext_resource type="Texture2D" uid="uid://baxivgf7iqabm" path="res://assets/Background/Black.png" id="29_n377p"]
@@ -1944,7 +1944,10 @@ shape = SubResource("RectangleShape2D_k4f0d")
 [node name="porta-area4" parent="." unique_id=1586311812 instance=ExtResource("19_im11s")]
 z_index = 2
 position = Vector2(458, 89)
-script = ExtResource("20_aetsv")
+script = ExtResource("27_86yb6")
+numero_porta = 4
+tempo_estrela = 10.99
+porta_visivel = true
 
 [node name="key_area4" parent="." unique_id=1023183090 instance=ExtResource("21_hsh0i")]
 z_index = 3

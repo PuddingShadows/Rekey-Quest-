@@ -16,8 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://bb18wu8ft1a5" path="res://assets/Background/Gray.png" id="15_1p3se"]
 [ext_resource type="PackedScene" uid="uid://cu8ubqa5k1val" path="res://scenes/controls.tscn" id="16_opxnq"]
 [ext_resource type="PackedScene" uid="uid://doph0gv5042eo" path="res://scenes/pause_menu.tscn" id="17_kdw0q"]
-[ext_resource type="Script" uid="uid://cq87jahjukcve" path="res://scripts/porta/porta_area2.gd" id="18_jhp1k"]
 [ext_resource type="Texture2D" uid="uid://i1m5bc1rwq08" path="res://assets/Traps/Spikes/Idle.png" id="19_ntmpm"]
+[ext_resource type="Script" uid="uid://c2c87c8552ik1" path="res://scripts/porta/porta_area.gd" id="19_wxtj4"]
 [ext_resource type="PackedScene" uid="uid://35p1eaexcbvd" path="res://scenes/porta_area.tscn" id="21_n8b4s"]
 [ext_resource type="PackedScene" uid="uid://b7leg4e527pma" path="res://scenes/key_area.tscn" id="22_5iq0o"]
 [ext_resource type="Script" uid="uid://bauae36o5odp8" path="res://scripts/espinho/spikes_area.gd" id="23_18m02"]
@@ -1414,7 +1414,10 @@ visible = false
 
 [node name="porta-area2" parent="." unique_id=1586311812 instance=ExtResource("21_n8b4s")]
 position = Vector2(280.5, 72)
-script = ExtResource("18_jhp1k")
+script = ExtResource("19_wxtj4")
+numero_porta = 2
+tempo_estrela = 9.99
+porta_visivel = true
 
 [node name="key_area2" parent="." unique_id=1023183090 instance=ExtResource("22_5iq0o")]
 z_index = 3

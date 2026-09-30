@@ -22,9 +22,9 @@
 [ext_resource type="Script" uid="uid://bcmf6jbgt746q" path="res://scripts/pause/pause.gd" id="21_k1ulb"]
 [ext_resource type="PackedScene" uid="uid://doph0gv5042eo" path="res://scenes/pause_menu.tscn" id="21_mqdvq"]
 [ext_resource type="Texture2D" uid="uid://dkn7qhj1qf3jy" path="res://assets/Terrain/Terrain (16x16).png" id="22_6uemd"]
+[ext_resource type="Script" uid="uid://c2c87c8552ik1" path="res://scripts/porta/porta_area.gd" id="22_tkb2l"]
 [ext_resource type="Texture2D" uid="uid://dhib4snv4i0ow" path="res://portas e chaves/normal levels/porta.png" id="23_o5g7j"]
 [ext_resource type="Texture2D" uid="uid://bb18wu8ft1a5" path="res://assets/Background/Gray.png" id="24_dc1kx"]
-[ext_resource type="Script" uid="uid://c7xslxt8e7twi" path="res://scripts/morango/strawberry_area.gd" id="24_tkb2l"]
 [ext_resource type="Texture2D" uid="uid://baxivgf7iqabm" path="res://assets/Background/Black.png" id="25_1sy33"]
 [ext_resource type="Texture2D" uid="uid://cigjlpvrxuiqf" path="res://assets/Terrain/Terrain3 (16x16).png" id="27_a10hn"]
 [ext_resource type="Texture2D" uid="uid://cs4fg7jclxwti" path="res://assets/particles/jump smoke frames/Smoke VFX3.png" id="30_tkb2l"]
@@ -1252,6 +1252,10 @@ shape = SubResource("RectangleShape2D_v40mb")
 
 [node name="porta-area1" parent="." unique_id=1586311812 instance=ExtResource("19_tmifg")]
 position = Vector2(424, 105)
+script = ExtResource("22_tkb2l")
+numero_porta = 1
+tempo_estrela = 10.99
+porta_visivel = true
 
 [node name="key_area" parent="." unique_id=1023183090 instance=ExtResource("20_0xxfr")]
 z_index = 3
@@ -1261,7 +1265,6 @@ position = Vector2(175, 63)
 visible = false
 position = Vector2(454, 217)
 scale = Vector2(1.5, 1.5)
-script = ExtResource("24_tkb2l")
 
 [node name="tilemap" type="Node2D" parent="." unique_id=1894301456]
 

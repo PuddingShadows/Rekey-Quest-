@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://35p1eaexcbvd" path="res://scenes/porta_area.tscn" id="19_dk80r"]
 [ext_resource type="Texture2D" uid="uid://pcws01ibgekf" path="res://assets/Other/escurecer03_2.png" id="19_nag5p"]
 [ext_resource type="PackedScene" uid="uid://b7leg4e527pma" path="res://scenes/key_area.tscn" id="20_hqrnj"]
-[ext_resource type="Script" uid="uid://bh342sl8ljxvt" path="res://scripts/porta/porta_area3.gd" id="20_vxifu"]
 [ext_resource type="PackedScene" uid="uid://diycvplk506gi" path="res://scenes/strawberry_area.tscn" id="21_qb1vb"]
 [ext_resource type="Script" uid="uid://dain53e04s3d4" path="res://scripts/sala secreta/sala_secreta_3.gd" id="22_2nmhj"]
 [ext_resource type="Texture2D" uid="uid://dkn7qhj1qf3jy" path="res://assets/Terrain/Terrain (16x16).png" id="22_d608w"]
@@ -30,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://cy0bf6gdjvcvt" path="res://assets/Terrain/Terrain2 (16x16).png" id="23_dwdrf"]
 [ext_resource type="Texture2D" uid="uid://dhib4snv4i0ow" path="res://portas e chaves/normal levels/porta.png" id="24_w41u6"]
 [ext_resource type="Texture2D" uid="uid://cigjlpvrxuiqf" path="res://assets/Terrain/Terrain3 (16x16).png" id="25_02o2u"]
+[ext_resource type="Script" uid="uid://c2c87c8552ik1" path="res://scripts/porta/porta_area.gd" id="26_nlbnc"]
 [ext_resource type="Texture2D" uid="uid://baxivgf7iqabm" path="res://assets/Background/Black.png" id="26_pb34w"]
 [ext_resource type="Script" uid="uid://s0ho85dlne5p" path="res://scripts/sala secreta/sala_secreta_2.gd" id="27_84an3"]
 [ext_resource type="Shader" uid="uid://buqtortar2k6m" path="res://shader_vinheta.gdshader" id="27_h6mei"]
@@ -1922,7 +1922,10 @@ position = Vector2(577, 0)
 
 [node name="porta-area3" parent="." unique_id=1586311812 instance=ExtResource("19_dk80r")]
 position = Vector2(455, 89)
-script = ExtResource("20_vxifu")
+script = ExtResource("26_nlbnc")
+numero_porta = 3
+tempo_estrela = 8.99
+porta_visivel = true
 
 [node name="key_area3" parent="." unique_id=1023183090 instance=ExtResource("20_hqrnj")]
 z_index = 3

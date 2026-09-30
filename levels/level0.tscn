@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://doph0gv5042eo" path="res://scenes/pause_menu.tscn" id="16_1x2eh"]
 [ext_resource type="Script" uid="uid://bauae36o5odp8" path="res://scripts/espinho/spikes_area.gd" id="17_kjqnu"]
 [ext_resource type="Texture2D" uid="uid://i1m5bc1rwq08" path="res://assets/Traps/Spikes/Idle.png" id="18_m64fu"]
-[ext_resource type="Script" uid="uid://cynhbu2vfarf7" path="res://scripts/porta/porta_area0.gd" id="20_85s30"]
+[ext_resource type="Script" uid="uid://c2c87c8552ik1" path="res://scripts/porta/porta_area.gd" id="20_85s30"]
 [ext_resource type="PackedScene" uid="uid://35p1eaexcbvd" path="res://scenes/porta_area.tscn" id="20_gfjbe"]
 [ext_resource type="PackedScene" uid="uid://b7leg4e527pma" path="res://scenes/key_area.tscn" id="21_q1xov"]
 [ext_resource type="PackedScene" uid="uid://diycvplk506gi" path="res://scenes/strawberry_area.tscn" id="22_4ueie"]
@@ -1163,6 +1163,9 @@ region_rect = Rect2(0, 9.058, 146.895, 6.942)
 z_index = 2
 position = Vector2(296, 223)
 script = ExtResource("20_85s30")
+numero_porta = 1
+tempo_estrela = 10.99
+porta_visivel = true
 
 [node name="key_area0" parent="." unique_id=1023183090 instance=ExtResource("21_q1xov")]
 z_index = 3
