@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bsbod3qk77ffr"]
 
-[ext_resource type="Script" uid="uid://ba3cck5doy2b1" path="res://scripts/levels/level_04.gd" id="1_bb6yk"]
+[ext_resource type="Script" uid="uid://dxgj8wk7gef5q" path="res://scripts/levels/level.gd" id="1_bb6yk"]
 [ext_resource type="PackedScene" uid="uid://bf8stoyxhexh7" path="res://actors/player.tscn" id="2_4yna5"]
 [ext_resource type="Texture2D" uid="uid://cs4fg7jclxwti" path="res://assets/particles/jump smoke frames/Smoke VFX3.png" id="3_hhagu"]
 [ext_resource type="Script" uid="uid://mxc0yjy5hew6" path="res://scripts/hud/hud.gd" id="4_bb6yk"]
@@ -30,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://dkn7qhj1qf3jy" path="res://assets/Terrain/Terrain (16x16).png" id="25_h2sae"]
 [ext_resource type="Texture2D" uid="uid://cy0bf6gdjvcvt" path="res://assets/Terrain/Terrain2 (16x16).png" id="26_y6ny0"]
 [ext_resource type="Texture2D" uid="uid://dhib4snv4i0ow" path="res://portas e chaves/normal levels/porta.png" id="27_bg064"]
-[ext_resource type="Script" uid="uid://c2c87c8552ik1" path="res://scripts/porta/porta_area.gd" id="27_q51hb"]
 [ext_resource type="Texture2D" uid="uid://cigjlpvrxuiqf" path="res://assets/Terrain/Terrain3 (16x16).png" id="28_5w0kk"]
 [ext_resource type="Texture2D" uid="uid://baxivgf7iqabm" path="res://assets/Background/Black.png" id="29_n377p"]
 [ext_resource type="Shader" uid="uid://buqtortar2k6m" path="res://shader_vinheta.gdshader" id="30_1r8c0"]
@@ -1874,10 +1873,7 @@ shape = SubResource("RectangleShape2D_k4f0d")
 [node name="porta-area4" parent="." unique_id=1586311812 instance=ExtResource("19_im11s")]
 z_index = 2
 position = Vector2(458, 89)
-script = ExtResource("27_q51hb")
 numero_porta = 4
-tempo_estrela = 10.99
-porta_visivel = true
 
 [node name="key_area4" parent="." unique_id=1023183090 instance=ExtResource("21_hsh0i")]
 visible = false

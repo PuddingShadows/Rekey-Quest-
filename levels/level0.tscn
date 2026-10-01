@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://di4nu2kr6e5o1"]
 
-[ext_resource type="Script" uid="uid://dxgj8wk7gef5q" path="res://scripts/levels/level_01.gd" id="1_rb6va"]
+[ext_resource type="Script" uid="uid://dxgj8wk7gef5q" path="res://scripts/levels/level.gd" id="1_rb6va"]
 [ext_resource type="PackedScene" uid="uid://bf8stoyxhexh7" path="res://actors/player.tscn" id="2_2te8w"]
 [ext_resource type="Texture2D" uid="uid://cs4fg7jclxwti" path="res://assets/particles/jump smoke frames/Smoke VFX3.png" id="3_02otd"]
 [ext_resource type="Script" uid="uid://mxc0yjy5hew6" path="res://scripts/hud/hud.gd" id="4_8ottt"]

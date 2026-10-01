@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://35p1eaexcbvd"]
 
-[ext_resource type="Script" uid="uid://88coqfe7iegu" path="res://scripts/porta/porta_area1.gd" id="1_o55sm"]
+[ext_resource type="Script" uid="uid://c2c87c8552ik1" path="res://scripts/porta/porta_area.gd" id="1_8qyjd"]
 [ext_resource type="Texture2D" uid="uid://dhib4snv4i0ow" path="res://portas e chaves/normal levels/porta.png" id="2_h6ya6"]
 [ext_resource type="Texture2D" uid="uid://c8o8ohy23nb4b" path="res://portas e chaves/normal levels/porta_aberta.png" id="3_h6ya6"]
 [ext_resource type="FontFile" uid="uid://uen7wraggy3u" path="res://assets/huds/fonts/cc.yal.7w7.block.ttf" id="4_algdu"]
@@ -167,7 +167,7 @@ _data = {
 [node name="porta-area" type="Area2D" unique_id=784219808]
 z_index = 1
 collision_layer = 16
-script = ExtResource("1_o55sm")
+script = ExtResource("1_8qyjd")
 
 [node name="porta" type="Sprite2D" parent="." unique_id=749662430]
 position = Vector2(47.499996, 1.4999995)

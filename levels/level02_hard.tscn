@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://b0br0q726ap5n"]
 
-[ext_resource type="Script" uid="uid://btdbp3xv3vnsw" path="res://scripts/levels/level_02.gd" id="1_p7coj"]
+[ext_resource type="Script" uid="uid://dxgj8wk7gef5q" path="res://scripts/levels/level.gd" id="1_ereuh"]
 [ext_resource type="PackedScene" uid="uid://bf8stoyxhexh7" path="res://actors/player.tscn" id="2_wbcm7"]
 [ext_resource type="Texture2D" uid="uid://cs4fg7jclxwti" path="res://assets/particles/jump smoke frames/Smoke VFX3.png" id="3_rx8ll"]
 [ext_resource type="Script" uid="uid://mxc0yjy5hew6" path="res://scripts/hud/hud.gd" id="5_e5r1g"]
@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://cu8ubqa5k1val" path="res://scenes/controls.tscn" id="16_opxnq"]
 [ext_resource type="PackedScene" uid="uid://doph0gv5042eo" path="res://scenes/pause_menu.tscn" id="17_kdw0q"]
 [ext_resource type="Texture2D" uid="uid://i1m5bc1rwq08" path="res://assets/Traps/Spikes/Idle.png" id="19_ntmpm"]
-[ext_resource type="Script" uid="uid://c2c87c8552ik1" path="res://scripts/porta/porta_area.gd" id="19_wxtj4"]
 [ext_resource type="PackedScene" uid="uid://35p1eaexcbvd" path="res://scenes/porta_area.tscn" id="21_n8b4s"]
 [ext_resource type="PackedScene" uid="uid://b7leg4e527pma" path="res://scenes/key_area.tscn" id="22_5iq0o"]
 [ext_resource type="Script" uid="uid://bauae36o5odp8" path="res://scripts/espinho/spikes_area.gd" id="23_18m02"]
@@ -1188,7 +1187,8 @@ _data = {
 shader = ExtResource("28_d0asq")
 
 [node name="level02" type="Node2D" unique_id=1399465139]
-script = ExtResource("1_p7coj")
+script = ExtResource("1_ereuh")
+time_end = "00:09"
 
 [node name="player" parent="." unique_id=507011309 instance=ExtResource("2_wbcm7")]
 position = Vector2(323, 178)
@@ -1414,10 +1414,8 @@ visible = false
 
 [node name="porta-area2" parent="." unique_id=1586311812 instance=ExtResource("21_n8b4s")]
 position = Vector2(280.5, 72)
-script = ExtResource("19_wxtj4")
 numero_porta = 2
 tempo_estrela = 9.99
-porta_visivel = true
 
 [node name="key_area2" parent="." unique_id=1023183090 instance=ExtResource("22_5iq0o")]
 z_index = 3

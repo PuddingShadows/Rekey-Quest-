@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c6o51cfhnmi6i"]
 
-[ext_resource type="Script" uid="uid://dqxg572w4ysmb" path="res://scripts/levels/level_03.gd" id="1_nag5p"]
+[ext_resource type="Script" uid="uid://dxgj8wk7gef5q" path="res://scripts/levels/level.gd" id="1_4teqb"]
 [ext_resource type="PackedScene" uid="uid://bf8stoyxhexh7" path="res://actors/player.tscn" id="2_bueam"]
 [ext_resource type="Texture2D" uid="uid://cs4fg7jclxwti" path="res://assets/particles/jump smoke frames/Smoke VFX3.png" id="3_u6lkg"]
 [ext_resource type="Script" uid="uid://mxc0yjy5hew6" path="res://scripts/hud/hud.gd" id="4_vxifu"]
@@ -29,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://cy0bf6gdjvcvt" path="res://assets/Terrain/Terrain2 (16x16).png" id="23_dwdrf"]
 [ext_resource type="Texture2D" uid="uid://dhib4snv4i0ow" path="res://portas e chaves/normal levels/porta.png" id="24_w41u6"]
 [ext_resource type="Texture2D" uid="uid://cigjlpvrxuiqf" path="res://assets/Terrain/Terrain3 (16x16).png" id="25_02o2u"]
-[ext_resource type="Script" uid="uid://c2c87c8552ik1" path="res://scripts/porta/porta_area.gd" id="26_nlbnc"]
 [ext_resource type="Texture2D" uid="uid://baxivgf7iqabm" path="res://assets/Background/Black.png" id="26_pb34w"]
 [ext_resource type="Script" uid="uid://s0ho85dlne5p" path="res://scripts/sala secreta/sala_secreta_2.gd" id="27_84an3"]
 [ext_resource type="Shader" uid="uid://buqtortar2k6m" path="res://shader_vinheta.gdshader" id="27_h6mei"]
@@ -1485,7 +1484,8 @@ _data = {
 }
 
 [node name="level03" type="Node2D" unique_id=1399465139]
-script = ExtResource("1_nag5p")
+script = ExtResource("1_4teqb")
+time_end = "00:08"
 
 [node name="player" parent="." unique_id=507011309 instance=ExtResource("2_bueam")]
 position = Vector2(470, 97)
@@ -1922,10 +1922,8 @@ position = Vector2(577, 0)
 
 [node name="porta-area3" parent="." unique_id=1586311812 instance=ExtResource("19_dk80r")]
 position = Vector2(455, 89)
-script = ExtResource("26_nlbnc")
 numero_porta = 3
 tempo_estrela = 8.99
-porta_visivel = true
 
 [node name="key_area3" parent="." unique_id=1023183090 instance=ExtResource("20_hqrnj")]
 z_index = 3
