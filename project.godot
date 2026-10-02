@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="rekey quest"
 config/description="um jogo de plataforma 2D onde temos que levar chaves até a porta para passar pelos mundos, enquanto absorve o poder das entidades daqueles mundos!"
-config/version="1.7.2"
+config/version="1.7.3"
 run/main_scene="uid://crgg4fk3si0m4"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="uid://bub7w4xc0iy6x"
