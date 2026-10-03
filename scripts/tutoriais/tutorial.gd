@@ -4,4 +4,5 @@ extends Node2D
 
 func _ready() -> void:
 	Globals.skin_player = skin_number
+	$player.trocar_skin(Globals.skin_player)
 	Globals.save_game()

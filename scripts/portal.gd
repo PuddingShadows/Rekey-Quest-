@@ -56,3 +56,4 @@ func _process(delta: float) -> void:
 		player.position = teleport
 		await player.get_node("Anim").animation_finished
 		player.set_physics_process(true)
+		player.velocity.y = 0
