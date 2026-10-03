@@ -3,6 +3,7 @@ extends Node
 const GAME_VERSION = "1.7.0"
 const SAVE_PATH := "user://save.json"
 
+var skin_player: int = 0
 
 var tutoriais = {
 	"tutorial0": false,
@@ -52,6 +53,7 @@ func save_game():
 		"powers": powers,
 		"stars": stars,
 		"doors_by_world": doors_by_world,
+		"skin_player": skin_player
 		}
 	
 	
@@ -85,6 +87,8 @@ func load_game():
 		stars = data.stars
 	if data.has("doors_by_world"):
 		doors_by_world = data.doors_by_world
+	if data.has("skin_player"):
+		skin_player = data.skin_player
 		
 	return true
 
@@ -121,5 +125,4 @@ func reset_save():
 	doors_by_world = {}
 	
 	stars = 0
-
-#teste Github
+	skin_player = 0

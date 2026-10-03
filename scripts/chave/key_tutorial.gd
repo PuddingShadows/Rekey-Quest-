@@ -3,11 +3,15 @@ extends Area2D
 @onready var SFX_collect = $SFX_collect
 
 @export var hud : CanvasLayer = null
+@export var visibilidade : bool = true
 
 var collected_body: Node2D = null
 
 func _ready() -> void:
-	pass
+	if visibilidade:
+		$key.visible = true
+	else:
+		$key.visible = false
 
 func _process(_delta: float) -> void:
 	pass

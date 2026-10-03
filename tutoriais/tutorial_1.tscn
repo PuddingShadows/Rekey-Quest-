@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bb18wu8ft1a5" path="res://assets/Background/Gray.png" id="1_2gees"]
 [ext_resource type="PackedScene" uid="uid://bf8stoyxhexh7" path="res://actors/player.tscn" id="1_wapuf"]
+[ext_resource type="Script" uid="uid://l3fxd5c0iab5" path="res://scripts/tutoriais/tutorial.gd" id="1_yq3vg"]
 [ext_resource type="Texture2D" uid="uid://baxivgf7iqabm" path="res://assets/Background/Black.png" id="2_ox87s"]
 [ext_resource type="Texture2D" uid="uid://i1m5bc1rwq08" path="res://assets/Traps/Spikes/Idle.png" id="3_1fmy0"]
 [ext_resource type="Texture2D" uid="uid://dhib4snv4i0ow" path="res://portas e chaves/normal levels/porta.png" id="4_wapuf"]
@@ -487,7 +488,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cluhk")
 }],
-"loop": false,
+"loop": 0,
 "name": &"collect",
 "speed": 30.0
 }, {
@@ -495,7 +496,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0fdsj")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }]
@@ -791,6 +792,7 @@ _data = {
 }
 
 [node name="tutorial_1" type="Node2D" unique_id=1037538679]
+script = ExtResource("1_yq3vg")
 
 [node name="player" parent="." unique_id=1777319598 instance=ExtResource("1_wapuf")]
 position = Vector2(167, 230)
@@ -933,11 +935,12 @@ position = Vector2(289, 104)
 script = ExtResource("9_e4i0y")
 
 [node name="key_tutorial1" type="Area2D" parent="." unique_id=2048988133 node_paths=PackedStringArray("hud")]
-z_index = 3
+z_index = 4
 position = Vector2(337, 155)
 collision_layer = 64
 script = ExtResource("17_h0i6d")
 hud = NodePath("../HUD_tutorial")
+visibilidade = false
 
 [node name="key" type="AnimatedSprite2D" parent="key_tutorial1" unique_id=1342550675]
 visible = false

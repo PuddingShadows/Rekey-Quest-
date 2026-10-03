@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var collision := $"collision player"
 
+@export var skins: Array[SpriteFrames]
+
 enum State {
 	IDLE,
 	RUN,
@@ -233,6 +235,14 @@ func spawn_dust(anim_name: String):
 	d.animation_finished.connect(d.queue_free)
 
 
+func tocar_animacao(nome: String):
+		$Anim.play(nome)
+
+
+func trocar_skin(numero: int):
+	$Anim.sprite_frames = skins[numero]
+
+
 func _on_timer_timeout() -> void:
 	tempo_pular = false
 
@@ -241,3 +251,4 @@ func _on_footstep_timeout() -> void:
 
 func _ready() -> void:
 	spawn_point = global_position
+	trocar_skin(Globals.skin_player)

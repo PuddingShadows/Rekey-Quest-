@@ -5,6 +5,8 @@ extends Area2D
 var player_in = false
 var player_inside = false
 
+var player = null
+
 func anim_fade_in():
 	var ui_select_button = get_tree().root.get_node("Lobby_principal/controls/ui_interect")
 	var anim_btn = get_tree().root.get_node("Lobby_principal/controls/anim")
@@ -33,7 +35,12 @@ func anim_fade_out():
 		ui_select_button.visible = false
 		player_in = false
 
-func _on_body_entered(_body: Node2D) -> void:
+func _on_body_entered(body: Node2D) -> void:
+	if body.name != "player":
+		return
+	
+	player = body
+	
 	if Globals.tutoriais["tutorial01"]:
 		anim_fade_in()
 		player_inside = true
@@ -84,8 +91,7 @@ func _process(_delta: float) -> void:
 		if Globals.tutoriais["tutorial01"]:
 			Transition.trocar_de_cena("res://tutoriais/tutorial_1.tscn")
 		elif Globals.tutoriais["tutorial02"]:
-			#Transition.trocar_de_cena("res://tutoriais/tutorial_2.tscn")
-			$"produção".visible = true
+			Transition.trocar_de_cena("res://tutoriais/tutorial_2.tscn")
 		
 	if !Globals.tutoriais["tutorial01"] and !Globals.tutoriais["tutorial02"]:
 		$porta_fechada.visible = true
