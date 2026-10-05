@@ -25,8 +25,8 @@ func _process(_delta: float) -> void:
 		Globals.save_game()
 
 func _on_fade_portas_animation_finished(_anim_name: StringName) -> void:
-		$porta.visible = false
-		fade_done = true
+	$porta.visible = false
+	fade_done = true
 
 
 func anim_fade_in():

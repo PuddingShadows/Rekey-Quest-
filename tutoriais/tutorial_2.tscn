@@ -10,8 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cy0bf6gdjvcvt" path="res://assets/Terrain/Terrain2 (16x16).png" id="7_jdq73"]
 [ext_resource type="PackedScene" uid="uid://35p1eaexcbvd" path="res://scenes/porta_area.tscn" id="9_f8guw"]
 [ext_resource type="PackedScene" uid="uid://chnggofyifak4" path="res://scenes/portal.tscn" id="10_fxu1d"]
-[ext_resource type="Script" uid="uid://mpr4pttch4cl" path="res://scripts/porta/porta_tutorial1.gd" id="10_iim26"]
+[ext_resource type="Script" uid="uid://drq804801et7c" path="res://scripts/porta/porta_tutorial2.gd" id="10_kjwe4"]
 [ext_resource type="Script" uid="uid://dnra15wa7iun2" path="res://scripts/chave/key_tutorial.gd" id="11_meuqf"]
+[ext_resource type="Texture2D" uid="uid://mr5esbbw8p7" path="res://assets/Traps/portals/portal_purple.png" id="12_kjwe4"]
 [ext_resource type="Texture2D" uid="uid://d2srwl8nij6ix" path="res://assets/Items/Fruits/Collected.png" id="12_sxw77"]
 [ext_resource type="Texture2D" uid="uid://crkbs5lxnxalf" path="res://portas e chaves/normal levels/key.png" id="13_4asau"]
 [ext_resource type="AudioStream" uid="uid://d2t0rl2pk58dk" path="res://assets/sons/key.wav" id="14_5acd2"]
@@ -753,7 +754,7 @@ shape = SubResource("RectangleShape2D_qq18i")
 [node name="porta_tutorial" parent="." unique_id=1168626857 instance=ExtResource("9_f8guw")]
 z_index = 2
 position = Vector2(465, 138)
-script = ExtResource("10_iim26")
+script = ExtResource("10_kjwe4")
 
 [node name="portal_green" parent="." unique_id=1122880683 instance=ExtResource("10_fxu1d")]
 z_index = 2
@@ -764,6 +765,18 @@ teleport = Vector2(151, 75)
 z_index = 2
 position = Vector2(151, 75)
 teleport = Vector2(232, 206)
+
+[node name="portal_purple" parent="." unique_id=144236876 instance=ExtResource("10_fxu1d")]
+z_index = 2
+position = Vector2(375, 206)
+texture_portal = ExtResource("12_kjwe4")
+teleport = Vector2(460, 127)
+
+[node name="portal_purple2" parent="." unique_id=458600939 instance=ExtResource("10_fxu1d")]
+z_index = 2
+position = Vector2(460, 127)
+texture_portal = ExtResource("12_kjwe4")
+teleport = Vector2(375, 206)
 
 [node name="key_tutorial2" type="Area2D" parent="." unique_id=2048988133 node_paths=PackedStringArray("hud")]
 z_index = 3

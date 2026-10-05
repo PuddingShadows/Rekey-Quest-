@@ -6,8 +6,8 @@ var player_in = false
 var player_inside = false
 
 func anim_fade_in():
-	var ui_select_button = get_tree().root.get_node("lobby_mundo1/controls/ui_interect")
-	var anim_btn = get_tree().root.get_node("lobby_mundo1/controls/anim")
+	var ui_select_button = get_parent().get_node("controls/ui_interect")
+	var anim_btn = get_parent().get_node("controls/anim")
 			
 	if not anim_btn.is_playing() and ui_select_button.visible == false:
 		ui_select_button.visible = true
@@ -18,8 +18,8 @@ func anim_fade_in():
 		anim_btn.play("fade_in")
 
 func anim_fade_out():
-	var ui_select_button = get_tree().root.get_node("lobby_mundo1/controls/ui_interect")
-	var anim_btn = get_tree().root.get_node("lobby_mundo1/controls/anim")
+	var ui_select_button = get_parent().get_node("controls/ui_interect")
+	var anim_btn = get_parent().get_node("controls/anim")
 			
 	if not anim_btn.is_playing():
 		anim_btn.play("fade_out")
@@ -42,8 +42,8 @@ func _on_body_exited(_body: Node2D) -> void:
 	anim_fade_out()
 	player_inside = false
 	
-	var ui_select_button = get_tree().root.get_node("lobby_mundo1/controls/ui_interect")
-	var anim_btn = get_tree().root.get_node("lobby_mundo1/controls/anim")
+	var ui_select_button = get_parent().get_node("controls/ui_interect")
+	var anim_btn = get_parent().get_node("controls/anim")
 	
 	await anim_btn.animation_finished
 	if not player_inside:

@@ -20,9 +20,11 @@
 [ext_resource type="AudioStream" uid="uid://dg3gx4twi0rj7" path="res://assets/sons/select.wav" id="22_1i20q"]
 [ext_resource type="Script" uid="uid://js6d61avh4jj" path="res://scripts/pause2/pause_principal.gd" id="25_c1k2s"]
 [ext_resource type="AudioStream" uid="uid://d2t0rl2pk58dk" path="res://assets/sons/key.wav" id="25_dmxtc"]
+[ext_resource type="Texture2D" uid="uid://7c3mh57h3ea6" path="res://portas e chaves/world 2/chave_mundo2.png" id="25_lsa6i"]
 [ext_resource type="PackedScene" uid="uid://bn4n2be0t1q0c" path="res://scenes/transition.tscn" id="26_o7seb"]
 [ext_resource type="PackedScene" uid="uid://d1webtya1pab3" path="res://scenes/escada.tscn" id="26_p4f87"]
 [ext_resource type="Script" uid="uid://brim8nvsx135i" path="res://scripts/porta/mundo2/porta_mundo_2.gd" id="26_vagok"]
+[ext_resource type="Script" uid="uid://bt3phrf1cj656" path="res://scripts/chave/key_mundo_02.gd" id="27_5fu4l"]
 [ext_resource type="Texture2D" uid="uid://cauu8o46ylkre" path="res://portas e chaves/world 2/porta_aberta_mundo2.png" id="27_7un7b"]
 [ext_resource type="FontFile" uid="uid://uen7wraggy3u" path="res://assets/huds/fonts/cc.yal.7w7.block.ttf" id="27_wcfi6"]
 [ext_resource type="AudioStream" uid="uid://dtncri4nxnqqo" path="res://assets/sons/abrindo.wav" id="28_lsa6i"]
@@ -726,8 +728,8 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("34_btprq")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7un7b"]
-atlas = ExtResource("33_cu8n3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i20q"]
+atlas = ExtResource("25_lsa6i")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uqqsu"]
@@ -757,7 +759,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7un7b")
+"texture": SubResource("AtlasTexture_1i20q")
 }],
 "loop": 1,
 "name": &"idle",
@@ -1556,6 +1558,28 @@ autoplay = &"fade_slide"
 stream = ExtResource("25_dmxtc")
 bus = &"sfx"
 
+[node name="key_mundo02" type="Area2D" parent="." unique_id=1251927628]
+position = Vector2(330, 108)
+script = ExtResource("27_5fu4l")
+
+[node name="key" type="AnimatedSprite2D" parent="key_mundo02" unique_id=627358675]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_uqqsu")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="collision" type="CollisionShape2D" parent="key_mundo02" unique_id=573332140]
+visible = false
+shape = SubResource("CapsuleShape2D_rysvd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="key_mundo02" unique_id=1963910135]
+libraries/ = SubResource("AnimationLibrary_brqwd")
+autoplay = &"fade_slide"
+
+[node name="SFX_collect" type="AudioStreamPlayer2D" parent="key_mundo02" unique_id=277200795]
+stream = ExtResource("25_dmxtc")
+bus = &"sfx"
+
 [node name="porta_mundo1" type="Area2D" parent="." unique_id=1324412907]
 z_index = 2
 position = Vector2(160, 209)
@@ -1862,6 +1886,8 @@ color = Color(0, 0, 0, 0.13725491)
 [connection signal="body_exited" from="saida" to="saida" method="_on_body_exited"]
 [connection signal="body_entered" from="key_mundo01" to="key_mundo01" method="_on_body_entered"]
 [connection signal="animation_finished" from="key_mundo01/key" to="key_mundo01" method="_on_key_animation_finished"]
+[connection signal="body_entered" from="key_mundo02" to="key_mundo02" method="_on_body_entered"]
+[connection signal="animation_finished" from="key_mundo02/key" to="key_mundo02" method="_on_key_animation_finished"]
 [connection signal="body_entered" from="porta_mundo1" to="porta_mundo1" method="_on_body_entered"]
 [connection signal="body_exited" from="porta_mundo1" to="porta_mundo1" method="_on_body_exited"]
 [connection signal="animation_finished" from="porta_mundo1/fade_portas" to="porta_mundo1" method="_on_fade_portas_animation_finished"]
