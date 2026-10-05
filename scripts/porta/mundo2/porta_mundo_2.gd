@@ -1,13 +1,11 @@
 extends Area2D
 
-
 @onready var SFX_open = $SFX_open
 @onready var SFX_select = $SFX_select
 
 var has_fade = false
 var player_in = false
 var fade_done = false
-
 
 
 func _process(_delta: float) -> void:
@@ -60,14 +58,39 @@ func anim_fade_out():
 
 
 func _on_body_entered(_body: Node2D) -> void:
-	$trancado.visible = true
+	player_in = true
 	
-	if not $anim.is_playing():
-		$anim.play("fade_in")
+	
+	if Globals.chaves["chave_mundo2"] or Globals.portas["porta_mundo2"]:
+		$Label.visible = true
+		
+		if not $anim.is_playing():
+			$anim.play("fade_in")
+			
+		if !Globals.portas["open_play2"]:
+			SFX_open.play()
+			Globals.portas["open_play2"] = true
+		anim_fade_in()
+		Globals.portas["porta_mundo2"] = true
+		Globals.chaves["chave_mundo2"] = false
+		Globals.chaves["chave_mundo2_hud"] = false
+		Globals.chaves["chave_usada2"] = true
+			
+		Globals.save_game()
+	else:
+		$trancado.visible = true
+			
+		if not $anim.is_playing():
+			$anim.play("fade_in")
 
 func _on_body_exited(_body: Node2D) -> void:
+	player_in = false
+	
+	anim_fade_out()
+	
 	if not $anim.is_playing():
 		$anim.play("fade_out")
 	
 	await $anim.animation_finished
 	$trancado.visible = false
+	$Label.visible = false

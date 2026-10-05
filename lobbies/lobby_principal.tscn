@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://dg3gx4twi0rj7" path="res://assets/sons/select.wav" id="22_1i20q"]
 [ext_resource type="Script" uid="uid://js6d61avh4jj" path="res://scripts/pause2/pause_principal.gd" id="25_c1k2s"]
 [ext_resource type="AudioStream" uid="uid://d2t0rl2pk58dk" path="res://assets/sons/key.wav" id="25_dmxtc"]
+[ext_resource type="Texture2D" uid="uid://7c3mh57h3ea6" path="res://portas e chaves/world 2/chave_mundo2.png" id="25_lsa6i"]
 [ext_resource type="PackedScene" uid="uid://bn4n2be0t1q0c" path="res://scenes/transition.tscn" id="26_o7seb"]
 [ext_resource type="PackedScene" uid="uid://d1webtya1pab3" path="res://scenes/escada.tscn" id="26_p4f87"]
 [ext_resource type="Script" uid="uid://brim8nvsx135i" path="res://scripts/porta/mundo2/porta_mundo_2.gd" id="26_vagok"]
@@ -805,12 +806,74 @@ _data = {
 &"fade_slide": SubResource("Animation_vpvi5")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i20q"]
+atlas = ExtResource("34_btprq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfmol"]
+atlas = ExtResource("34_btprq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkyh0"]
+atlas = ExtResource("34_btprq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7aar"]
+atlas = ExtResource("34_btprq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gclab"]
+atlas = ExtResource("34_btprq")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7xj8"]
+atlas = ExtResource("34_btprq")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcbdj"]
+atlas = ExtResource("25_lsa6i")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7b7a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1i20q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfmol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkyh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7aar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gclab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7xj8")
+}],
+"loop": 0,
+"name": &"collect",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcbdj")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1x7k"]
 size = Vector2(34, 66)
 
 [sub_resource type="LabelSettings" id="LabelSettings_mogxu"]
 font = ExtResource("27_wcfi6")
-font_color = Color(0.6852183, 0.24378529, 0, 1)
+font_color = Color(0.65, 0.20583332, 0, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
@@ -965,6 +1028,12 @@ _data = {
 &"fade_in": SubResource("Animation_l1yqm")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_dmxtc"]
+font = ExtResource("27_wcfi6")
+font_color = Color(0.44, 0.44, 0.44, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="Animation" id="Animation_gclab"]
 length = 0.001
 tracks/0/type = "value"
@@ -974,6 +1043,18 @@ tracks/0/path = NodePath("trancado:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -995,6 +1076,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_n7xj8"]
 resource_name = "fade_out"
@@ -1006,6 +1099,18 @@ tracks/0/path = NodePath("trancado:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -1365,6 +1470,7 @@ outline_color = Color(0, 0, 0, 1)
 shader = ExtResource("49_45r22")
 
 [node name="Lobby_principal" type="Node2D" unique_id=88062437]
+metadata/_edit_vertical_guides_ = [111.0]
 
 [node name="player" parent="." unique_id=1592309701 instance=ExtResource("7_bo378")]
 position = Vector2(159, 125)
@@ -1559,9 +1665,9 @@ bus = &"sfx"
 position = Vector2(330, 108)
 script = ExtResource("27_5fu4l")
 
-[node name="key" type="AnimatedSprite2D" parent="key_mundo02" unique_id=627358675]
+[node name="key" type="AnimatedSprite2D" parent="key_mundo02" unique_id=102359721]
 scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_uqqsu")
+sprite_frames = SubResource("SpriteFrames_g7b7a")
 animation = &"idle"
 autoplay = "idle"
 
@@ -1651,6 +1757,7 @@ visible = false
 shape = SubResource("RectangleShape2D_o1x7k")
 
 [node name="trancado" type="Label" parent="porta_mundo2" unique_id=1803715381]
+visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = -33.0
 offset_top = -45.0
@@ -1667,7 +1774,7 @@ offset_top = -43.0
 offset_right = 30.0
 offset_bottom = -20.0
 text = "MUNDO 2"
-label_settings = SubResource("LabelSettings_mogxu")
+label_settings = SubResource("LabelSettings_dmxtc")
 
 [node name="anim" type="AnimationPlayer" parent="porta_mundo2" unique_id=1753660712]
 libraries/ = SubResource("AnimationLibrary_kcbdj")

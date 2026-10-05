@@ -145,8 +145,11 @@ texture = ExtResource("6_6hf14")
 9:4/0 = 0
 10:4/0 = 0
 12:4/0 = 0
+12:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:4/0 = 0
+13:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:4/0 = 0
+14:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:4/0 = 0
 17:4/0 = 0
 18:4/0 = 0
@@ -1520,7 +1523,7 @@ offset_left = -4.0
 offset_top = -44.0
 offset_right = 36.0
 offset_bottom = -21.0
-text = "x02"
+text = "x14"
 label_settings = SubResource("LabelSettings_0156u")
 
 [node name="anim" type="AnimationPlayer" parent="porta2_mundo2" unique_id=424797220]
@@ -1571,7 +1574,7 @@ offset_left = -4.0
 offset_top = -44.0
 offset_right = 36.0
 offset_bottom = -21.0
-text = "x04"
+text = "x16"
 label_settings = SubResource("LabelSettings_0156u")
 
 [node name="anim" type="AnimationPlayer" parent="porta3_mundo2" unique_id=76384685]
@@ -1622,7 +1625,7 @@ offset_left = -4.0
 offset_top = -44.0
 offset_right = 36.0
 offset_bottom = -21.0
-text = "x07"
+text = "x19"
 label_settings = SubResource("LabelSettings_0156u")
 
 [node name="anim" type="AnimationPlayer" parent="porta4_mundo2" unique_id=54928300]
@@ -1673,7 +1676,7 @@ offset_left = -4.0
 offset_top = -44.0
 offset_right = 36.0
 offset_bottom = -21.0
-text = "x10"
+text = "x22"
 label_settings = SubResource("LabelSettings_0156u")
 
 [node name="anim" type="AnimationPlayer" parent="porta5_mundo2" unique_id=2022288414]

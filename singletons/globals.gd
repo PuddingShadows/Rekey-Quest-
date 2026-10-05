@@ -31,6 +31,7 @@ var portas = {
 	"porta_mundo1": false,
 	"porta_mundo2": false,
 	"open_play1": false,
+	"open_play2": false,
 }
 
 var powers = {
@@ -128,6 +129,7 @@ func reset_save():
 		"porta_mundo1": false,
 		"porta_mundo2": false,
 		"open_play1": false,
+		"open_play2": false,
 	}
 	
 	powers = {

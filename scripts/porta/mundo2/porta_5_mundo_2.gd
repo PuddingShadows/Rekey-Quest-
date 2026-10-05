@@ -61,7 +61,7 @@ func _on_body_entered(_body: Node2D) -> void:
 		if !Globals.doors_by_world["LobbyMundo2"].has("Door9"):
 			Globals.doors_by_world["LobbyMundo2"]["Door9"] = false
 	
-	if estrelas >= 2 and Globals.doors_by_world["LobbyMundo2"]["Door9"]:
+	if estrelas >= 22 and Globals.doors_by_world["LobbyMundo2"]["Door9"]:
 		anim_fade_in()
 		
 		player_in = true
@@ -104,9 +104,9 @@ func _process(_delta: float) -> void:
 		Globals.doors_by_world["LobbyMundo2"]["Door9"] = false
 	
 	if Globals.doors_by_world.has("LobbyMundo2"):
-		var porta1 = Globals.doors_by_world["LobbyMundo2"]["Door9"]
+		var porta9 = Globals.doors_by_world["LobbyMundo2"]["Door9"]
 		var estrelas = Globals.stars
-		if estrelas >= 2 and porta1:
+		if estrelas >= 22 and porta9:
 			$porta_aberta.visible = true
 			$porta_fechada.visible = false
 		else:
