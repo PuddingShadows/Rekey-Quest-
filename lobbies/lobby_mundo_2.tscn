@@ -19,12 +19,12 @@
 [ext_resource type="FontFile" uid="uid://uen7wraggy3u" path="res://assets/huds/fonts/cc.yal.7w7.block.ttf" id="18_1jula"]
 [ext_resource type="AudioStream" uid="uid://dg3gx4twi0rj7" path="res://assets/sons/select.wav" id="19_gjn46"]
 [ext_resource type="Script" uid="uid://b32xe2yaupscc" path="res://scripts/porta/mundo2/porta_1_mundo_2.gd" id="19_qpu04"]
-[ext_resource type="Script" uid="uid://bxsqcsofbjclj" path="res://scripts/porta/mundo2/porta_2_mundo_2.gd" id="21_qpu04"]
-[ext_resource type="Script" uid="uid://def88dlgfvd7x" path="res://scripts/porta/mundo2/porta_3_mundo_2.gd" id="22_mqnx6"]
+[ext_resource type="Script" uid="uid://cf0tqlls4kmq8" path="res://scripts/porta/mundo2/porta_2_mundo_2.gd" id="21_qpu04"]
+[ext_resource type="Script" uid="uid://csel275sfqkmc" path="res://scripts/porta/mundo2/porta_3_mundo_2.gd" id="22_mqnx6"]
 [ext_resource type="Texture2D" uid="uid://tjlhal16fmxp" path="res://assets/huds/stars.png" id="22_yf6ob"]
-[ext_resource type="Script" uid="uid://cx4085l7b2ynt" path="res://scripts/porta/mundo2/porta_4_mundo_2.gd" id="23_3l1jh"]
-[ext_resource type="Script" uid="uid://dkbwpg0quiqta" path="res://scripts/porta/mundo2/porta_5_mundo_2.gd" id="24_kb6a8"]
-[ext_resource type="Texture2D" uid="uid://duwt3e04ms44c" path="res://portas e chaves/world 1/porta_aberta_mundo1.png" id="27_xtil6"]
+[ext_resource type="Script" uid="uid://d2ex6xppr461f" path="res://scripts/porta/mundo2/porta_4_mundo_2.gd" id="23_3l1jh"]
+[ext_resource type="Script" uid="uid://dgasseodkpseo" path="res://scripts/porta/mundo2/porta_5_mundo_2.gd" id="24_kb6a8"]
+[ext_resource type="Texture2D" uid="uid://cauu8o46ylkre" path="res://portas e chaves/world 2/porta_aberta_mundo2.png" id="25_qpu04"]
 [ext_resource type="Script" uid="uid://uj7xcssdsdtu" path="res://scripts/powers/power_of_war.gd" id="30_6hb6b"]
 [ext_resource type="Texture2D" uid="uid://d2srwl8nij6ix" path="res://assets/Items/Fruits/Collected.png" id="31_5x2o2"]
 [ext_resource type="Texture2D" uid="uid://di7taoy6dotwp" path="res://assets/Traps/Sand Mud Ice/Sand Particle.png" id="32_bpmq3"]
@@ -1640,11 +1640,11 @@ script = ExtResource("24_kb6a8")
 
 [node name="porta_aberta" type="Sprite2D" parent="porta5_mundo2" unique_id=1570471121]
 z_as_relative = false
-texture = ExtResource("27_xtil6")
+texture = ExtResource("25_qpu04")
 
 [node name="porta_fechada" type="Sprite2D" parent="porta5_mundo2" unique_id=1689279509]
 z_as_relative = false
-texture = ExtResource("10_i4wkg")
+texture = ExtResource("11_vjg38")
 
 [node name="collision" type="CollisionShape2D" parent="porta5_mundo2" unique_id=108835217]
 visible = false
@@ -1705,6 +1705,16 @@ bus = &"sfx"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="power_of_conquest" unique_id=766850034]
 libraries/ = SubResource("AnimationLibrary_fgik6")
 autoplay = &"fade_slide"
+
+[node name="portal1" parent="." unique_id=1122880683 instance=ExtResource("40_qpu04")]
+position = Vector2(328, 100)
+texture_portal = ExtResource("41_mqnx6")
+teleport = Vector2(328, 207)
+
+[node name="portal2" parent="." unique_id=2089729048 instance=ExtResource("40_qpu04")]
+position = Vector2(328, 207)
+texture_portal = ExtResource("41_mqnx6")
+teleport = Vector2(328, 100)
 
 [node name="HUD_lobby" type="CanvasLayer" parent="." unique_id=1874820822]
 layer = 5
@@ -1791,16 +1801,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.13725491)
-
-[node name="portal1" parent="." unique_id=1122880683 instance=ExtResource("40_qpu04")]
-position = Vector2(328, 100)
-texture_portal = ExtResource("41_mqnx6")
-teleport = Vector2(328, 207)
-
-[node name="portal2" parent="." unique_id=2089729048 instance=ExtResource("40_qpu04")]
-position = Vector2(328, 207)
-texture_portal = ExtResource("41_mqnx6")
-teleport = Vector2(328, 100)
 
 [connection signal="body_entered" from="saida_lvl" to="saida_lvl" method="_on_body_entered"]
 [connection signal="body_exited" from="saida_lvl" to="saida_lvl" method="_on_body_exited"]

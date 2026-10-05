@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 		
 	if Input.is_action_just_pressed("interact") and player_in and fade_done:
 		SFX_select.play()
-		Transition.trocar_de_cena("res://lobbies/lobby_mundo_1.tscn")
+		Transition.trocar_de_cena("res://lobbies/lobby_mundo_2.tscn")
 		Globals.save_game()
 
 

@@ -27,8 +27,8 @@ func atualizar_texto():
 
 
 func anim_fade_in():
-	var anim_btn = get_tree().root.get_node("lobby_mundo1/controls/anim")
-	var ui_select_button = get_tree().root.get_node("lobby_mundo1/controls/ui_interect")
+	var anim_btn = get_parent().get_node("controls/anim")
+	var ui_select_button = get_parent().get_node("controls/ui_interect")
 	
 	if not anim_btn.is_playing() and ui_select_button.visible == false:
 		ui_select_button.visible = true
@@ -39,8 +39,8 @@ func anim_fade_in():
 		anim_btn.play("fade_in")
 
 func anim_fade_out():
-	var anim_btn = get_tree().root.get_node("lobby_mundo1/controls/anim")
-	var ui_select_button = get_tree().root.get_node("lobby_mundo1/controls/ui_interect")
+	var anim_btn = get_parent().get_node("controls/anim")
+	var ui_select_button = get_parent().get_node("controls/ui_interect")
 	
 	if not anim_btn.is_playing():
 		anim_btn.play("fade_out")

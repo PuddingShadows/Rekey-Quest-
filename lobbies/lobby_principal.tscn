@@ -20,7 +20,6 @@
 [ext_resource type="AudioStream" uid="uid://dg3gx4twi0rj7" path="res://assets/sons/select.wav" id="22_1i20q"]
 [ext_resource type="Script" uid="uid://js6d61avh4jj" path="res://scripts/pause2/pause_principal.gd" id="25_c1k2s"]
 [ext_resource type="AudioStream" uid="uid://d2t0rl2pk58dk" path="res://assets/sons/key.wav" id="25_dmxtc"]
-[ext_resource type="Texture2D" uid="uid://7c3mh57h3ea6" path="res://portas e chaves/world 2/chave_mundo2.png" id="25_lsa6i"]
 [ext_resource type="PackedScene" uid="uid://bn4n2be0t1q0c" path="res://scenes/transition.tscn" id="26_o7seb"]
 [ext_resource type="PackedScene" uid="uid://d1webtya1pab3" path="res://scenes/escada.tscn" id="26_p4f87"]
 [ext_resource type="Script" uid="uid://brim8nvsx135i" path="res://scripts/porta/mundo2/porta_mundo_2.gd" id="26_vagok"]
@@ -728,8 +727,8 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("34_btprq")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1i20q"]
-atlas = ExtResource("25_lsa6i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsa6i"]
+atlas = ExtResource("33_cu8n3")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uqqsu"]
@@ -759,7 +758,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1i20q")
+"texture": SubResource("AtlasTexture_lsa6i")
 }],
 "loop": 1,
 "name": &"idle",
@@ -1541,10 +1540,8 @@ script = ExtResource("33_rysvd")
 [node name="key" type="AnimatedSprite2D" parent="key_mundo01" unique_id=869270025]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_uqqsu")
-animation = &"collect"
+animation = &"idle"
 autoplay = "idle"
-frame = 5
-frame_progress = 1.0
 
 [node name="collision" type="CollisionShape2D" parent="key_mundo01" unique_id=669980190]
 visible = false
@@ -1645,6 +1642,7 @@ texture = ExtResource("10_d66ri")
 
 [node name="porta_aberta" type="Sprite2D" parent="porta_mundo2" unique_id=2033307773]
 visible = false
+modulate = Color(1, 1, 1, 0)
 z_as_relative = false
 texture = ExtResource("27_7un7b")
 
@@ -1653,7 +1651,6 @@ visible = false
 shape = SubResource("RectangleShape2D_o1x7k")
 
 [node name="trancado" type="Label" parent="porta_mundo2" unique_id=1803715381]
-visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = -33.0
 offset_top = -45.0
@@ -1662,8 +1659,30 @@ offset_bottom = -34.0
 text = "trancado"
 label_settings = SubResource("LabelSettings_rysvd")
 
+[node name="Label" type="Label" parent="porta_mundo2" unique_id=274461844]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -26.0
+offset_top = -43.0
+offset_right = 30.0
+offset_bottom = -20.0
+text = "MUNDO 2"
+label_settings = SubResource("LabelSettings_mogxu")
+
 [node name="anim" type="AnimationPlayer" parent="porta_mundo2" unique_id=1753660712]
 libraries/ = SubResource("AnimationLibrary_kcbdj")
+
+[node name="fade_portas" type="AnimationPlayer" parent="porta_mundo2" unique_id=366343044]
+libraries/ = SubResource("AnimationLibrary_nispa")
+
+[node name="SFX_open" type="AudioStreamPlayer2D" parent="porta_mundo2" unique_id=1969064607]
+stream = ExtResource("28_lsa6i")
+bus = &"sfx"
+
+[node name="SFX_select" type="AudioStreamPlayer2D" parent="porta_mundo2" unique_id=1865484758]
+process_mode = 3
+stream = ExtResource("22_1i20q")
+bus = &"sfx"
 
 [node name="porta_mundo3" type="Area2D" parent="." unique_id=640292392]
 z_index = 2
@@ -1893,6 +1912,7 @@ color = Color(0, 0, 0, 0.13725491)
 [connection signal="animation_finished" from="porta_mundo1/fade_portas" to="porta_mundo1" method="_on_fade_portas_animation_finished"]
 [connection signal="body_entered" from="porta_mundo2" to="porta_mundo2" method="_on_body_entered"]
 [connection signal="body_exited" from="porta_mundo2" to="porta_mundo2" method="_on_body_exited"]
+[connection signal="animation_finished" from="porta_mundo2/fade_portas" to="porta_mundo2" method="_on_fade_portas_animation_finished"]
 [connection signal="body_entered" from="porta_mundo3" to="porta_mundo3" method="_on_body_entered"]
 [connection signal="body_exited" from="porta_mundo3" to="porta_mundo3" method="_on_body_exited"]
 [connection signal="body_entered" from="porta_mundo4" to="porta_mundo4" method="_on_body_entered"]

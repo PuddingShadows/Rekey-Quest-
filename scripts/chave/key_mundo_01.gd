@@ -9,7 +9,7 @@ func _ready() -> void:
 	desativar_area()
 
 func _process(_delta: float) -> void:
-	if Globals.tutoriais["tutorial01"] == false:
+	if Globals.tutoriais["tutorial01_feito"] == true:
 		ativar_area()
 
 

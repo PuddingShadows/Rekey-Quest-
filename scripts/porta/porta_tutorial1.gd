@@ -59,6 +59,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and player_inside:
 		SFX_select.play()
 		Globals.tutoriais["tutorial01"] = false
+		Globals.tutoriais["tutorial01_feito"] = true
 		Globals.tutoriais["tutorial_escada"] = true
 		Transition.trocar_de_cena("res://lobbies/lobby_principal.tscn")
 		Globals.save_game()

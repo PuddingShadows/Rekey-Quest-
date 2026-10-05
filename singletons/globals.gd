@@ -1,6 +1,6 @@
 extends Node
 
-const GAME_VERSION = "1.7.0"
+const GAME_VERSION = "1.8.0"
 const SAVE_PATH := "user://save.json"
 
 var skin_player: int = 0
@@ -9,7 +9,9 @@ var tutoriais = {
 	"tutorial0": false,
 	"tutorial0_5": false,
 	"tutorial01": true,
+	"tutorial01_feito": false,
 	"tutorial02": false,
+	"tutorial02_feito": false,
 	
 	"tutorial_escada": true,
 	"tutorial_poder1": true,
@@ -19,11 +21,15 @@ var tutoriais = {
 var chaves = {
 	"chave_mundo1": false,
 	"chave_mundo1_hud": false,
-	"chave_usada1": false
+	"chave_usada1": false,
+	"chave_mundo2": false,
+	"chave_mundo2_hud": false,
+	"chave_usada2": false
 }
 
 var portas = {
 	"porta_mundo1": false,
+	"porta_mundo2": false,
 	"open_play1": false,
 }
 
@@ -100,7 +106,9 @@ func reset_save():
 		"tutorial0": false,
 		"tutorial0_5": false,
 		"tutorial01": true,
+		"tutorial01_feito": false,
 		"tutorial02": false,
+		"tutorial02_feito": false,
 		
 		"tutorial_escada": true,
 		"tutorial_poder1": true,
@@ -110,11 +118,15 @@ func reset_save():
 	chaves = {
 		"chave_mundo1": false,
 		"chave_mundo1_hud": false,
-		"chave_usada1": false
+		"chave_usada1": false,
+		"chave_mundo2": false,
+		"chave_mundo2_hud": false,
+		"chave_usada2": false
 	}
 		
 	portas = {
 		"porta_mundo1": false,
+		"porta_mundo2": false,
 		"open_play1": false,
 	}
 	
