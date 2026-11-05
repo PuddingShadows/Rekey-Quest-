@@ -1855,6 +1855,7 @@ shape = SubResource("RectangleShape2D_q51hb")
 visible = false
 z_index = 2
 position = Vector2(288, 185)
+cena_lobby = "uid://7dsbhpuo70e0"
 numero_porta = 5
 tempo_estrela = 14.99
 porta_visivel = false

@@ -1,8 +1,12 @@
 extends Area2D
 
+@export_file("*.tscn") var cena_lobby: String
+
 @export var numero_porta: int = 1
 @export var tempo_estrela: float = 10.99
 @export var porta_visivel := true
+
+@export var nome_mundo: String = "LobbyMundo1"
 
 @onready var SFX_open = $SFX_open
 @onready var SFX_star = $SFX_star
@@ -10,6 +14,7 @@ extends Area2D
 @onready var SFX_select = $SFX_select
 
 var has_fade = false
+var player_inside = false
 
 
 func anim_fade_in():
@@ -39,6 +44,8 @@ func anim_fade_out():
 
 
 func _on_body_entered(body: Node2D) -> void:
+	player_inside = true
+	
 	if body.red_key:
 		$porta_aberta.visible = true
 		anim_fade_in()
@@ -56,6 +63,7 @@ func _on_body_entered(body: Node2D) -> void:
 		$porta_aberta.visible = false
 
 func _on_body_exited(_body: Node2D) -> void:
+	player_inside = false
 	anim_fade_out()
 
 
@@ -155,13 +163,17 @@ func star_verification():
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact") and player_inside:
 		star_verification()
 		
 		var estrelas = contar_estrelas()
 		var nome_estrelas = "Stars_door%d" % numero_porta
 		
-		LobbyMundo1.salvar_estrelas(nome_estrelas, estrelas)
+		Globals.salvar_estrelas_mundo(
+			nome_mundo,
+			nome_estrelas,
+			estrelas
+			)
 		
 		get_tree().paused = true
 		
@@ -177,10 +189,10 @@ func _process(_delta: float) -> void:
 		await get_tree().create_timer(0.3).timeout
 		animar_estrelas_ganhas()
 		
-		if not Globals.doors_by_world.has("LobbyMundo1"):
-			Globals.doors_by_world["LobbyMundo1"] = {}
+		if not Globals.doors_by_world.has(nome_mundo):
+			Globals.doors_by_world[nome_mundo] = {}
 			
-		Globals.doors_by_world["LobbyMundo1"]["Door%d" % numero_porta] = true
+		Globals.doors_by_world[nome_mundo]["Door%d" % numero_porta] = true
 		Globals.save_game()
 
 func _ready() -> void:

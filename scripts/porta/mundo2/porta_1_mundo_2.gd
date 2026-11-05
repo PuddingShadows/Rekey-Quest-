@@ -86,7 +86,7 @@ func _on_body_exited(_body: Node2D) -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and player_in:
 		SFX_select.play()
-		Transition.trocar_de_cena("res://levels/level01.tscn")
+		Transition.trocar_de_cena("res://levels/level06.tscn")
 	
 	atualizar_texto()
 

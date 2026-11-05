@@ -1414,6 +1414,7 @@ visible = false
 
 [node name="porta-area2" parent="." unique_id=1586311812 instance=ExtResource("21_n8b4s")]
 position = Vector2(280.5, 72)
+cena_lobby = "uid://7dsbhpuo70e0"
 numero_porta = 2
 tempo_estrela = 9.99
 

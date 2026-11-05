@@ -94,7 +94,7 @@ func _on_body_exited(_body: Node2D) -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and player_in:
-		Transition.trocar_de_cena("res://levels/level02.tscn")
+		Transition.trocar_de_cena("res://levels/level07.tscn")
 		SFX_select.play()
 	
 	if !Globals.doors_by_world.has("LobbyMundo2"):

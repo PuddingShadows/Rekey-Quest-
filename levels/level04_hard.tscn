@@ -1943,6 +1943,7 @@ shape = SubResource("RectangleShape2D_k4f0d")
 [node name="porta-area4" parent="." unique_id=1586311812 instance=ExtResource("19_im11s")]
 z_index = 2
 position = Vector2(458, 89)
+cena_lobby = "uid://7dsbhpuo70e0"
 numero_porta = 4
 
 [node name="key_area4" parent="." unique_id=1023183090 instance=ExtResource("21_hsh0i")]

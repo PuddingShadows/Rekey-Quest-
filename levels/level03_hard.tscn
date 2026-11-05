@@ -1997,6 +1997,7 @@ position = Vector2(577, 0)
 
 [node name="porta-area3" parent="." unique_id=1586311812 instance=ExtResource("19_dk80r")]
 position = Vector2(455, 89)
+cena_lobby = "uid://7dsbhpuo70e0"
 numero_porta = 3
 tempo_estrela = 8.99
 

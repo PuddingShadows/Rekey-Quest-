@@ -5,4 +5,6 @@ extends Button
 func _on_pressed() -> void:
 	get_tree().paused = false
 	STX_select.play()
-	Transition.trocar_de_cena("res://lobbies/lobby_mundo_1.tscn")
+	
+	var porta = get_parent().get_parent().get_parent()
+	Transition.trocar_de_cena(porta.cena_lobby)

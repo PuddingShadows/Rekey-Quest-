@@ -1,25 +1,23 @@
 extends Node2D
 
 func _ready() -> void:
-	if Globals.doors_by_world.has("LobbyMundo1"):
-		Doors = Globals.doors_by_world["LobbyMundo1"].duplicate(true)
-	else:
-		Doors = {
-			"Door1": false,
-			"Stars_door1": 0,
-			
-			"Door2": false,
-			"Stars_door2": 0,
-			
-			"Door3": false,
-			"Stars_door3": 0,
-			
-			"Door4": false,
-			"Stars_door4": 0,
-			
-			"Door5": false,
-			"Stars_door5": 0
+	Doors = {
+		"Door1": false,
+		"Stars_door1": 0,
+		"Door2": false,
+		"Stars_door2": 0,
+		"Door3": false,
+		"Stars_door3": 0,
+		"Door4": false,
+		"Stars_door4": 0,
+		"Door5": false,
+		"Stars_door5": 0
 		}
+		
+	if Globals.doors_by_world.has("LobbyMundo1"):
+		var salvos = Globals.doors_by_world["LobbyMundo1"]
+		for chave in salvos:
+			Doors[chave] = salvos[chave]
 
 
 var Doors = {}

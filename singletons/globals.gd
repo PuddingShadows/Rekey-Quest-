@@ -48,6 +48,29 @@ var in_menu = false
 var god_mode = false
 var console_open = false
 
+var estrelas_por_mundo: Dictionary = {}
+
+func salvar_estrelas_mundo(
+	nome_mundo: String,
+	nome_estrelas: String,
+	quantidade: int
+	) -> void:
+		
+		if not doors_by_world.has(nome_mundo):
+			doors_by_world[nome_mundo] = {}
+			
+		var mundo: Dictionary = doors_by_world[nome_mundo]
+		var anteriores: int = int(mundo.get(nome_estrelas, 0))
+		
+		if quantidade > anteriores:
+			mundo[nome_estrelas] = quantidade
+			doors_by_world[nome_mundo] = mundo
+			
+			stars += quantidade - anteriores
+			
+			save_game()
+
+
 func save_game():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file == null:

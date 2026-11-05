@@ -1677,7 +1677,6 @@ offset_top = -44.0
 offset_right = 36.0
 offset_bottom = -21.0
 text = "x22"
-label_settings = SubResource("LabelSettings_0156u")
 
 [node name="anim" type="AnimationPlayer" parent="porta5_mundo2" unique_id=2022288414]
 libraries/ = SubResource("AnimationLibrary_dfllk")
