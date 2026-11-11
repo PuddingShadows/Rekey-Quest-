@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dtbvh8tqwjntp" path="res://portas e chaves/world 4/porta_mundo4.png" id="13_k1f7f"]
 [ext_resource type="Texture2D" uid="uid://c3ijaw2e0eonj" path="res://portas e chaves/porta_saída.png" id="14_ah00f"]
 [ext_resource type="Texture2D" uid="uid://bh45tkqr4cjje" path="res://portas e chaves/porta_aberta_tutorial.png" id="15_qgs5s"]
+[ext_resource type="Script" uid="uid://ca7bj3y6asqn0" path="res://scripts/tutoriais/tirar_tutorial_power.gd" id="16_3l1jh"]
 [ext_resource type="Script" uid="uid://c0nlvn4pn78pq" path="res://scripts/saida/saida_lvl.gd" id="17_8rrlu"]
 [ext_resource type="FontFile" uid="uid://uen7wraggy3u" path="res://assets/huds/fonts/cc.yal.7w7.block.ttf" id="18_1jula"]
 [ext_resource type="AudioStream" uid="uid://dg3gx4twi0rj7" path="res://assets/sons/select.wav" id="19_gjn46"]
@@ -25,9 +26,9 @@
 [ext_resource type="Script" uid="uid://d2ex6xppr461f" path="res://scripts/porta/mundo2/porta_4_mundo_2.gd" id="23_3l1jh"]
 [ext_resource type="Script" uid="uid://dgasseodkpseo" path="res://scripts/porta/mundo2/porta_5_mundo_2.gd" id="24_kb6a8"]
 [ext_resource type="Texture2D" uid="uid://cauu8o46ylkre" path="res://portas e chaves/world 2/porta_aberta_mundo2.png" id="25_qpu04"]
-[ext_resource type="Script" uid="uid://uj7xcssdsdtu" path="res://scripts/powers/power_of_war.gd" id="30_6hb6b"]
+[ext_resource type="Script" uid="uid://dspqhbwdhemfv" path="res://scripts/powers/power_of_conquest.gd" id="26_mqnx6"]
+[ext_resource type="Texture2D" uid="uid://cfpmxw5q0iqt4" path="res://assets/Traps/Sand Mud Ice/power_of_conquest.png" id="28_mqnx6"]
 [ext_resource type="Texture2D" uid="uid://d2srwl8nij6ix" path="res://assets/Items/Fruits/Collected.png" id="31_5x2o2"]
-[ext_resource type="Texture2D" uid="uid://di7taoy6dotwp" path="res://assets/Traps/Sand Mud Ice/Sand Particle.png" id="32_bpmq3"]
 [ext_resource type="AudioStream" uid="uid://d2t0rl2pk58dk" path="res://assets/sons/key.wav" id="33_6kytt"]
 [ext_resource type="Script" uid="uid://dpk1d7l314c6y" path="res://scripts/hud/hud_lobby.gd" id="34_12qd0"]
 [ext_resource type="Texture2D" uid="uid://krqepdi3b1b8" path="res://assets/huds/chave_nao_descoberta.png" id="35_00hek"]
@@ -40,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://mr5esbbw8p7" path="res://assets/Traps/portals/portal_purple.png" id="41_mqnx6"]
 [ext_resource type="PackedScene" uid="uid://cu8ubqa5k1val" path="res://scenes/controls.tscn" id="41_nihsj"]
 [ext_resource type="PackedScene" uid="uid://cu2m5g1eder1k" path="res://scenes/pause_menu_principal.tscn" id="42_lrkim"]
+[ext_resource type="Script" uid="uid://dmb5adiwa8gna" path="res://scripts/tutoriais/tutorial_power.gd" id="42_mqnx6"]
 [ext_resource type="Shader" uid="uid://buqtortar2k6m" path="res://shader_vinheta.gdshader" id="44_iheu8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03idp"]
@@ -392,6 +394,9 @@ size = Vector2(9.25, 207)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbmmm"]
 size = Vector2(414, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kb6a8"]
+size = Vector2(26, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mppad"]
 size = Vector2(33.5, 63.5)
@@ -1082,8 +1087,8 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("31_5x2o2")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qcriv"]
-atlas = ExtResource("32_bpmq3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l1jh"]
+atlas = ExtResource("28_mqnx6")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q84l8"]
@@ -1113,7 +1118,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qcriv")
+"texture": SubResource("AtlasTexture_3l1jh")
 }],
 "loop": 1,
 "name": &"idle",
@@ -1151,7 +1156,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -6), Vector2(0, 0)]
+"values": [Vector2(73, -10), Vector2(73, -4)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fgik6"]
@@ -1352,6 +1357,64 @@ sources/0 = SubResource("TileSetAtlasSource_4ey2k")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kj3k8"]
 shader = ExtResource("44_iheu8")
 
+[sub_resource type="LabelSettings" id="LabelSettings_3l1jh"]
+font = ExtResource("18_1jula")
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_cfty8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yo77d"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5yuea"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kb6a8"]
+_data = {
+&"RESET": SubResource("Animation_cfty8"),
+&"fade_in": SubResource("Animation_yo77d"),
+&"fade_out": SubResource("Animation_5yuea")
+}
+
 [node name="lobby_mundo2" type="Node2D" unique_id=762153132]
 script = ExtResource("1_3l1jh")
 
@@ -1418,6 +1481,14 @@ shape = SubResource("RectangleShape2D_dtcr2")
 [node name="collision 5" type="CollisionShape2D" parent="collisions" unique_id=829056234]
 position = Vector2(328, 148.5)
 shape = SubResource("RectangleShape2D_dbmmm")
+
+[node name="tirar_tutorial_power" type="Area2D" parent="." unique_id=2057712228]
+visible = false
+script = ExtResource("16_3l1jh")
+
+[node name="collision" type="CollisionShape2D" parent="tirar_tutorial_power" unique_id=1175919819]
+position = Vector2(252, 105.5)
+shape = SubResource("RectangleShape2D_kb6a8")
 
 [node name="saida_lvl" type="Area2D" parent="." unique_id=1622311956]
 script = ExtResource("17_8rrlu")
@@ -1669,7 +1740,7 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(-13, -42)
 texture = ExtResource("22_yf6ob")
 
-[node name="estrelas_necessarias" type="Label" parent="porta5_mundo2" unique_id=562064381]
+[node name="estrelas_necessarias" type="Label" parent="porta5_mundo2" unique_id=2011316770]
 visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = -4.0
@@ -1677,6 +1748,7 @@ offset_top = -44.0
 offset_right = 36.0
 offset_bottom = -21.0
 text = "x22"
+label_settings = SubResource("LabelSettings_0156u")
 
 [node name="anim" type="AnimationPlayer" parent="porta5_mundo2" unique_id=2022288414]
 libraries/ = SubResource("AnimationLibrary_dfllk")
@@ -1687,7 +1759,7 @@ stream = ExtResource("19_gjn46")
 bus = &"sfx"
 
 [node name="power_of_conquest" type="Area2D" parent="." unique_id=605984396]
-script = ExtResource("30_6hb6b")
+script = ExtResource("26_mqnx6")
 
 [node name="powers" type="AnimatedSprite2D" parent="power_of_conquest" unique_id=103050708]
 position = Vector2(329, 114)
@@ -1804,6 +1876,36 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.13725491)
 
+[node name="tutorial_power" type="Control" parent="." unique_id=194233775]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 320.0
+size_flags_horizontal = 4
+mouse_filter = 2
+script = ExtResource("42_mqnx6")
+
+[node name="Label2" type="Label" parent="tutorial_power" unique_id=1899728335]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -178.0
+offset_top = 50.0
+offset_right = 198.0
+offset_bottom = 67.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "agora volte a sala do apocalipse e pegue
+ o próximo poder de Entidade na porta amarela"
+label_settings = SubResource("LabelSettings_3l1jh")
+horizontal_alignment = 1
+
+[node name="anim" type="AnimationPlayer" parent="tutorial_power" unique_id=1393388367]
+libraries/ = SubResource("AnimationLibrary_kb6a8")
+
+[connection signal="body_entered" from="tirar_tutorial_power" to="tirar_tutorial_power" method="_on_body_entered"]
 [connection signal="body_entered" from="saida_lvl" to="saida_lvl" method="_on_body_entered"]
 [connection signal="body_exited" from="saida_lvl" to="saida_lvl" method="_on_body_exited"]
 [connection signal="body_entered" from="porta1_mundo2" to="porta1_mundo2" method="_on_body_entered"]

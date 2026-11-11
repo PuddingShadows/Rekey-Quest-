@@ -36,6 +36,7 @@ var portas = {
 
 var powers = {
 	"war": false,
+	"conquest": false,
 }
 
 var doors_by_world := {}
@@ -157,6 +158,7 @@ func reset_save():
 	
 	powers = {
 		"war": false,
+		"conquest": false,
 	}
 	
 	doors_by_world = {}
