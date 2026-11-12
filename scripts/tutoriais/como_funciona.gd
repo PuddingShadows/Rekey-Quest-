@@ -11,6 +11,6 @@ func _process(_delta: float) -> void:
 			if Globals.doors_by_world["LobbyMundo1"]["Door5"]:
 				$Label.visible = false
 				$Label2.visible = true
-	if Globals.tutoriais["tutorial_poder2"] and !fade_execut:
+	if Globals.tutoriais["tutorial_poder1"] and !fade_execut:
 		$anim.play("fade_in")
 		fade_execut = true
