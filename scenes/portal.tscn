@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://mpohxg6ba60f" path="res://scripts/portal.gd" id="1_1ffj6"]
 [ext_resource type="Texture2D" uid="uid://mr5esbbw8p7" path="res://assets/Traps/portals/portal_purple.png" id="1_v0xau"]
 [ext_resource type="Texture2D" uid="uid://dyv2jeflansvf" path="res://assets/Traps/portals/portal_green.png" id="2_jr6l0"]
+[ext_resource type="AudioStream" uid="uid://c8haw0cw5xr20" path="res://assets/sons/teleport.wav" id="4_d4jfq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g7b7a"]
 size = Vector2(28, 58)
@@ -17,6 +18,9 @@ texture = ExtResource("1_v0xau")
 [node name="collision" type="CollisionShape2D" parent="." unique_id=1709156972]
 visible = false
 shape = SubResource("RectangleShape2D_g7b7a")
+
+[node name="SFX_teleport" type="AudioStreamPlayer2D" parent="." unique_id=1846936976]
+stream = ExtResource("4_d4jfq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

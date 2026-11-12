@@ -49,6 +49,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and player_in:
+		$SFX_teleport.play()
 		player.tocar_animacao("morte")
 		player.set_physics_process(false)
 		await player.get_node("Anim").animation_finished
