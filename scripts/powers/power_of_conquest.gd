@@ -33,7 +33,7 @@ func _on_body_entered(_body: Node2D) -> void:
 	$powers.play("collect")
 	SFX_collect.play()
 	Globals.powers["conquest"] = true
-	Globals.tutoriais["tutorial02"] = true
+	Globals.tutoriais["tutorial03"] = true
 	Globals.tutoriais["tutorial_poder2"] = true
 	Globals.save_game()
 

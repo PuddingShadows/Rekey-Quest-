@@ -11,7 +11,7 @@ func _ready():
 	anim.stop()
 
 func _process(_delta: float) -> void:
-	if Globals.tutoriais["tutorial_poder1"] or Globals.tutoriais["tutorial_poder2"]:
+	if Globals.tutoriais["tutorial_poder2"]:
 		var tutorial = get_tree().get_root().get_node("lobby_mundo2/tutorial_power")
 		var fade_in = get_tree().get_root().get_node("lobby_mundo2/tutorial_power/anim")
 		tutorial.visible = true

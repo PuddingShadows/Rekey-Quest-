@@ -64,6 +64,18 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		Globals.save_game()
 	
+	elif Globals.tutoriais["tutorial03"]:
+		anim_fade_in()
+		player_inside = true
+		
+		player_in = true
+		$"produção".visible = true
+		
+		if not $anim.is_playing():
+			$anim.play("fade_in")
+		
+		Globals.save_game()
+	
 	else:
 		$trancado.visible = true
 		
@@ -92,8 +104,10 @@ func _process(_delta: float) -> void:
 			Transition.trocar_de_cena("res://tutoriais/tutorial_1.tscn")
 		elif Globals.tutoriais["tutorial02"]:
 			Transition.trocar_de_cena("res://tutoriais/tutorial_2.tscn")
+		elif Globals.tutoriais["tutorial03"]:
+			$"produção".visible = true
 		
-	if !Globals.tutoriais["tutorial01"] and !Globals.tutoriais["tutorial02"]:
+	if !Globals.tutoriais["tutorial01"] and !Globals.tutoriais["tutorial02"] and !Globals.tutoriais["tutorial03"]:
 		$porta_fechada.visible = true
 	else:
 		$porta_fechada.visible = false

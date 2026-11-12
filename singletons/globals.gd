@@ -134,6 +134,7 @@ func reset_save():
 		"tutorial01_feito": false,
 		"tutorial02": false,
 		"tutorial02_feito": false,
+		"tutorial03": false,
 		
 		"tutorial_escada": true,
 		"tutorial_poder1": true,
